@@ -685,15 +685,15 @@
         <!--Window Controller-->
         <scene sceneID="3ID-S4-t5z">
             <objects>
-                <windowController id="00e-Iv-nRI" customClass="WindowController" customModule="SFSymbolsPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
                     <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" toolbarStyle="compact" id="LDa-mo-e1J">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="294" y="324" width="600" height="320"/>
+                        <rect key="contentRect" x="294" y="324" width="580" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
                         <value key="minSize" type="size" width="450" height="320"/>
                         <view key="contentView" id="lrc-3e-Bou">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                            <rect key="frame" x="0.0" y="0.0" width="580" height="320"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
                         <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="oVl-Vd-iBw">
@@ -741,7 +741,7 @@
         <!--Split View Controller-->
         <scene sceneID="gHG-9o-VIJ">
             <objects>
-                <splitViewController id="RzZ-5a-ODS" customClass="SplitViewController" customModule="SFSymbolsPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="RzZ-5a-ODS" customClass="SplitViewController" customModule="SymbolPicker" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" separatorStyle="none" id="IOk-pJ-kZq"/>
                         <splitViewItem holdingPriority="199" separatorStyle="line" id="hME-0o-dOQ"/>
@@ -762,25 +762,25 @@
         <!--Sidebar View Controller-->
         <scene sceneID="TMu-q4-7Dl">
             <objects>
-                <viewController id="D2g-N1-4sE" customClass="SidebarViewController" customModule="SFSymbolsPicker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="1ql-Eg-bqr">
-                        <rect key="frame" x="0.0" y="0.0" width="220" height="360"/>
+                <viewController id="D2g-N1-4sE" customClass="SidebarViewController" customModule="SymbolPicker" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="1ql-Eg-bqr">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="220" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="360"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="360"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="188" minWidth="16" maxWidth="1000" id="Bfc-pj-JmR">
+                                                <tableColumn width="148" minWidth="16" maxWidth="1000" id="Bfc-pj-JmR">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -793,11 +793,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="HeaderCell" id="gcf-BM-aWn">
-                                                            <rect key="frame" x="11" y="0.0" width="197" height="17"/>
+                                                            <rect key="frame" x="11" y="0.0" width="157" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-wr-E0Y">
-                                                                    <rect key="frame" x="0.0" y="1" width="197" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="1" width="157" height="14"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="0UF-bj-LPy">
                                                                         <font key="font" metaFont="smallSystemBold"/>
@@ -811,7 +811,7 @@
                                                             </connections>
                                                         </tableCellView>
                                                         <tableCellView identifier="DataCell" id="V13-l4-GLC">
-                                                            <rect key="frame" x="11" y="17" width="197" height="17"/>
+                                                            <rect key="frame" x="11" y="17" width="157" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="Jzp-KP-vhB">
@@ -823,7 +823,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="E7g-5A-fPX"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JjT-Gn-kT3">
-                                                                    <rect key="frame" x="22" y="1" width="177" height="16"/>
+                                                                    <rect key="frame" x="22" y="1" width="137" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="ZF3-63-EZN">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -855,12 +855,11 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="360" id="QSW-iG-A18"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="mIy-nk-I0N"/>
+                                    <constraint firstAttribute="width" constant="180" id="mIy-nk-I0N"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="360" id="rJv-Lw-g29"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="p6S-v3-7Uc">
-                                    <rect key="frame" x="0.0" y="284" width="180" height="16"/>
+                                    <rect key="frame" x="0.0" y="344" width="180" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="CEP-22-Sjw">
@@ -897,7 +896,7 @@
         <!--Symbol Collection View Controller-->
         <scene sceneID="Vit-E0-tnA">
             <objects>
-                <viewController id="418-Pv-aui" customClass="SymbolCollectionViewController" customModule="SFSymbolsPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="418-Pv-aui" customClass="SymbolCollectionViewController" customModule="SymbolPicker" sceneMemberID="viewController">
                     <scrollView key="view" wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Pxj-0C-hWN">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

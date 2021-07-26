@@ -19,11 +19,17 @@ open class WindowController: NSWindowController {
   
   private var searchFieldDelegate: SearchField?
   
+  var collectionViewController: SymbolCollectionViewController?
+  
   open override func windowDidLoad() {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
     configureSearch()
     configureDelegates()
+  }
+  
+  func configureCurrentItem(symbol: String, color: NSColor) {
+    collectionViewController?.configureCurrentItem(symbol: symbol, color: color)
   }
   
   func configureSearch() {
@@ -38,6 +44,7 @@ open class WindowController: NSWindowController {
       collections.pickerDelegate = self
       searchFieldDelegate = collections
       sidebar.delegate = collections
+      collectionViewController = collections
     }
   }
   
@@ -49,7 +56,7 @@ open class WindowController: NSWindowController {
 }
 
 extension WindowController: SymbolPickerDelegate {
-  func symbolPicker(_ symbol: String, color: NSColor) {
-    print(#function, symbol)
+  public func symbolPicker(_ symbol: String, color: NSColor?) {
+    delegate?.symbolPicker(symbol, color: color)
   }
 }

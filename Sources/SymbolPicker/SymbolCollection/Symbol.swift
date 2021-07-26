@@ -81,7 +81,7 @@ class Symbol {
   ]
   
   static func symbols(in category: Category) -> [String] {
-    if let url = Bundle.main.url(forResource: category.rawValue, withExtension: "txt") {
+    if let url = Bundle.module.url(forResource: category.rawValue, withExtension: "txt") {
       do {
         let content = try String(contentsOf: url)
         let symbols = content.components(separatedBy: "\n").filter { !$0.isEmpty }

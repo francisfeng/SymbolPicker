@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SymbolView" customModule="SFSymbolsPicker" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SymbolView" customModule="SymbolPicker">
             <connections>
                 <outlet property="boxView" destination="nP8-NX-krt" id="xbY-pc-axP"/>
                 <outlet property="view" destination="c22-O7-iKe" id="bfD-RI-vBa"/>
@@ -46,7 +46,7 @@
             </constraints>
             <point key="canvasLocation" x="139" y="126"/>
         </customView>
-        <collectionViewItem id="isM-0a-BKM" customClass="SymbolView" customModule="SFSymbolsPicker" customModuleProvider="target">
+        <collectionViewItem id="isM-0a-BKM" customClass="SymbolView" customModule="SymbolPicker">
             <connections>
                 <outlet property="boxView" destination="nP8-NX-krt" id="y0c-jp-4Yc"/>
                 <outlet property="imageView" destination="DaP-ec-hsd" id="R4t-vR-LLD"/>

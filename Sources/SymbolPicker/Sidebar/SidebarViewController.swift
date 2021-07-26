@@ -77,7 +77,7 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
                              to: view,
                              withKeyPath: "objectValue.value",
                              options: nil)
-        view.imageView?.image = NSImage(systemSymbolName: node.symbolName, accessibilityDescription: nil)
+        view.imageView?.image = NSImage(node.symbolName)
         return view
       }
     }

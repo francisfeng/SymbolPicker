@@ -7,8 +7,8 @@
 
 import Cocoa
 
-protocol SymbolPickerDelegate {
-  func symbolPicker(_ symbol: String, color: NSColor)
+public protocol SymbolPickerDelegate {
+  func symbolPicker(_ symbol: String, color: NSColor?)
 }
 
 class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
@@ -24,9 +24,18 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   var pickerDelegate: SymbolPickerDelegate?
   var sidebarDelegate: SidebarController?
   
+  let nibIdentifier = NSUserInterfaceItemIdentifier.init("SymbolView")
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     observeColorWellChange()
+    let nib = NSNib(nibNamed: "SymbolView", bundle: .module)
+    collectionView.register(nib, forItemWithIdentifier: nibIdentifier)
+  }
+  
+  func configureCurrentItem(symbol: String, color: NSColor) {
+    self.currentSymbolName = symbol
+    self.color = color
   }
   
   func observeColorWellChange() {
@@ -54,14 +63,14 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   }
   
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    let identifier = NSUserInterfaceItemIdentifier.init("SymbolView")
-    let item = collectionView.makeItem(withIdentifier: identifier, for: indexPath)
+    let item = collectionView.makeItem(withIdentifier: nibIdentifier, for: indexPath)
     let symbol = symbolsName[indexPath.item]
     if let symbolItem = item as? SymbolView {
-      let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
-      let image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)?.withSymbolConfiguration(configuration)
-        
-      symbolItem.imageView?.image = image
+      if #available(macOS 11.0, *) {
+        let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
+        let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
+        symbolItem.imageView?.image = image
+      }
       symbolItem.imageView?.contentTintColor = color
       symbolItem.imageView?.toolTip = symbol
       return symbolItem
@@ -69,18 +78,17 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     return item
   }
   
-  
   func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
     currentSelected = indexPaths
     guard let indexPath = indexPaths.first else { return }
     let symbol = symbolsName[indexPath.item]
-    pickerDelegate?.symbolPicker(symbol, color: NSColorPanel.shared.color)
-  }
-  
-  // Add invisible space to symbol name after dot (.) to make NSTextField's truncation work properly
-  func addInvisibleSpace(_ name: String) -> String {
-    let replaced = name.replacingOccurrences(of: ".", with: ".\u{200B}")
-    return replaced
+    if isColorChanged {
+      pickerDelegate?.symbolPicker(symbol, color: NSColorPanel.shared.color)
+    } else {
+      pickerDelegate?.symbolPicker(symbol, color: nil)
+    }
+    guard let window = view.window else { return }
+    window.sheetParent?.endSheet(window, returnCode: .cancel)
   }
   
 }

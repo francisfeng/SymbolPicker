@@ -7,7 +7,7 @@ let package = Package(
   name: "SymbolPicker",
   defaultLocalization: "en",
   platforms: [
-    .macOS(.v11),
+    .macOS(.v10_15),
   ],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
