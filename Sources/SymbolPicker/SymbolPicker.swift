@@ -10,7 +10,7 @@ import Cocoa
 open class SymbolPicker {
   var text = "Hello World"
   
-  public static func makeNewWindow(symbol: String, color: NSColor, delegate: SymbolPickerDelegate, title: String? = nil) -> NSWindow? {
+  public static func windowController(symbol: String, color: NSColor, delegate: SymbolPickerDelegate, title: String? = nil) -> NSWindowController? {
     let storyboard = NSStoryboard.init(name: "Main", bundle: .module)
     if let controller = storyboard.instantiateInitialController() as? WindowController {
       controller.configureCurrentItem(symbol: symbol, color: color)
@@ -18,7 +18,7 @@ open class SymbolPicker {
       if let title = title {
         controller.window?.title = title
       }
-      return controller.window
+      return controller
     }
     return nil
   }

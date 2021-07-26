@@ -7,7 +7,7 @@
 
 import Cocoa
 
-public protocol SymbolPickerDelegate {
+public protocol SymbolPickerDelegate: AnyObject {
   func symbolPicker(_ symbol: String, color: NSColor?)
 }
 
@@ -21,10 +21,14 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   var isColorChanged = false
   var currentSymbolName: String? = nil
   var currentSelected: Set<IndexPath>?
-  var pickerDelegate: SymbolPickerDelegate?
-  var sidebarDelegate: SidebarController?
+  weak var pickerDelegate: SymbolPickerDelegate?
+  weak var sidebarDelegate: SidebarController?
   
   let nibIdentifier = NSUserInterfaceItemIdentifier.init("SymbolView")
+  
+  deinit {
+    print(#function, "SymbolCollectionViewController")
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -73,6 +77,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
       }
       symbolItem.imageView?.contentTintColor = color
       symbolItem.imageView?.toolTip = symbol
+      symbolItem.viewController = self
       return symbolItem
     }
     return item
@@ -88,7 +93,22 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
       pickerDelegate?.symbolPicker(symbol, color: nil)
     }
     guard let window = view.window else { return }
-    window.sheetParent?.endSheet(window, returnCode: .cancel)
+    window.sheetParent?.endSheet(window, returnCode: .OK)
+  }
+  
+  // Used in SymbolView. Double-click to select current and exit.
+  func selectCurrent() {
+    let selectionIndexes = collectionView.selectionIndexes
+    if let selected = selectionIndexes.first {
+      let symbol = symbolsName[selected]
+      if isColorChanged {
+        pickerDelegate?.symbolPicker(symbol, color: NSColorPanel.shared.color)
+      } else {
+        pickerDelegate?.symbolPicker(symbol, color: nil)
+      }
+      guard let window = view.window else { return }
+      window.sheetParent?.endSheet(window, returnCode: .OK)
+    }
   }
   
 }

@@ -11,6 +11,16 @@ class SymbolView: NSCollectionViewItem {
   
   @IBOutlet weak var boxView: NSBox!
   
+  weak var viewController: SymbolCollectionViewController?
+  
+  override func mouseDown(with event: NSEvent) {
+    if event.clickCount > 1 && isSelected {
+      viewController?.selectCurrent()
+    } else {
+      super.mouseDown(with: event)
+    }
+  }
+  
   override func loadView() {
     super.loadView()
     self.boxView.layer?.masksToBounds = true

@@ -7,7 +7,7 @@
 
 import AppKit
 
-protocol SearchField {
+protocol SearchField: AnyObject {
   func searchField(_ string: String)
 }
 
@@ -15,17 +15,21 @@ open class WindowController: NSWindowController {
   
   @IBOutlet weak var searchField: NSSearchField!
   
-  var delegate: SymbolPickerDelegate?
+  weak var delegate: SymbolPickerDelegate?
   
-  private var searchFieldDelegate: SearchField?
+  private weak var searchFieldDelegate: SearchField?
   
-  var collectionViewController: SymbolCollectionViewController?
+  weak var collectionViewController: SymbolCollectionViewController?
   
   open override func windowDidLoad() {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
     configureSearch()
     configureDelegates()
+  }
+  
+  deinit {
+    print(#function, "Symbol Picker", window)
   }
   
   func configureCurrentItem(symbol: String, color: NSColor) {

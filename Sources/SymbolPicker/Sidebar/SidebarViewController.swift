@@ -7,7 +7,7 @@
 
 import AppKit
 
-protocol SidebarController {
+protocol SidebarController: AnyObject {
   func sidebarController(_ controller: SidebarViewController, node: Node)
 }
 
@@ -16,7 +16,7 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
   
   @IBOutlet var treeController: NSTreeController!
   
-  var delegate: SidebarController?
+  weak var delegate: SidebarController?
   
   @objc dynamic var content = [AnyObject]()
   
