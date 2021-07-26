@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="00e-Iv-nRI">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="Search Toolbar Item" minToolsVersion="12.0" minSystemVersion="11.0"/>
@@ -698,12 +699,6 @@
                         </view>
                         <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="oVl-Vd-iBw">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="C6CA2425-A611-4D44-B72E-EFBC4A2FC53D" label="Toggle Sidebar" paletteLabel="Toggle Sidebar" tag="-1" image="NSTouchBarSidebarTemplate" bordered="YES" sizingBehavior="auto" id="DP9-NA-V2S">
-                                    <connections>
-                                        <action selector="toggleSidebar:" target="IMu-of-HsN" id="TBl-U4-xhR"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="393C404E-873B-433E-A772-1FF493BEC38D" explicitItemIdentifier="NSToolbarSidebarTrackingSeparatorItemIdentifier" label="Separator" paletteLabel="Separator" tag="-1" bordered="YES" sizingBehavior="auto" id="3Y3-oV-xfS"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="MGO-nb-Vbe"/>
                                 <searchToolbarItem implicitItemIdentifier="7DC8FE9D-1CD6-44B9-8879-B506EF9DDFF7" label="Search" paletteLabel="Search" visibilityPriority="1001" id="ZkM-mZ-xio">
                                     <nil key="toolTip"/>
@@ -719,8 +714,6 @@
                                 </searchToolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="DP9-NA-V2S"/>
-                                <toolbarItem reference="3Y3-oV-xfS"/>
                                 <toolbarItem reference="MGO-nb-Vbe"/>
                                 <searchToolbarItem reference="ZkM-mZ-xio"/>
                             </defaultToolbarItems>
@@ -763,7 +756,7 @@
         <scene sceneID="TMu-q4-7Dl">
             <objects>
                 <viewController id="D2g-N1-4sE" customClass="SidebarViewController" customModule="SymbolPicker" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="1ql-Eg-bqr">
+                    <view key="view" id="1ql-Eg-bqr">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -939,6 +932,5 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="15" height="15"/>
-        <image name="NSTouchBarSidebarTemplate" width="18" height="14"/>
     </resources>
 </document>
