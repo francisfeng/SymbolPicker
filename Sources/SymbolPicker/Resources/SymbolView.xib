@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19142.2"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SymbolView" customModule="SymbolPicker">
+        <customObject id="-2" userLabel="File's Owner">
             <connections>
                 <outlet property="boxView" destination="nP8-NX-krt" id="xbY-pc-axP"/>
                 <outlet property="view" destination="c22-O7-iKe" id="bfD-RI-vBa"/>
@@ -48,7 +49,7 @@
         </customView>
         <collectionViewItem id="isM-0a-BKM" customClass="SymbolView" customModule="SymbolPicker">
             <connections>
-                <outlet property="boxView" destination="nP8-NX-krt" id="y0c-jp-4Yc"/>
+                <outlet property="boxView" destination="nP8-NX-krt" id="Ryl-Ih-GTW"/>
                 <outlet property="imageView" destination="DaP-ec-hsd" id="R4t-vR-LLD"/>
                 <outlet property="view" destination="c22-O7-iKe" id="0YK-j4-LTc"/>
             </connections>
