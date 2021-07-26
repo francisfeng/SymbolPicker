@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  SFSymbolsPicker
+
+  Created by Francis Feng on 2021/5/4.
+  
+*/
+// SF Symbols
+"SFSymbols" = "SF Symbols";
+"SFSymbolsCategory" = "類別";
+"CategoryAll" = "全部";
+"CategoryCommunication" = "通訊";
+"CategoryWeather" = "天氣";
+"CategoryObjectsTools" = "物品與工具";
+"CategoryDevices" = "裝置";
+"CategoryGaming" = "遊戲";
+"CategoryConnectivity" = "連線";
+"CategoryTransportation" = "交通";
+"CategoryHuman" = "人物";
+"CategoryNature" = "自然";
+"CategoryEditing" = "編輯";
+"CategoryTextFormatting" = "文字格式";
+"CategoryMedia" = "媒體";
+"CategoryKeyboard" = "鍵盤";
+"CategoryCommerce" = "商業";
+"CategoryTime" = "時間";
+"CategoryHealth" = "健康";
+"CategoryShapes" = "形狀";
+"CategoryArrows" = "箭頭";
+"CategoryIndices" = "索引";
+"CategoryMath" = "數學";

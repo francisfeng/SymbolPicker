@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  SFSymbolsPicker
+
+  Created by Francis Feng on 2021/5/4.
+  
+*/
+// SF Symbols
+"SFSymbols" = "SF Symbols";
+"SFSymbolsCategory" = "Categories";
+"CategoryAll" = "All";
+"CategoryCommunication" = "Communication";
+"CategoryWeather" = "Weather";
+"CategoryObjectsTools" = "Object & Tools";
+"CategoryDevices" = "Devices";
+"CategoryGaming" = "Gaming";
+"CategoryConnectivity" = "Connectivity";
+"CategoryTransportation" = "Transportation";
+"CategoryHuman" = "Human";
+"CategoryNature" = "Nature";
+"CategoryEditing" = "Editing";
+"CategoryTextFormatting" = "Text Formatting";
+"CategoryMedia" = "Media";
+"CategoryKeyboard" = "Keyboard";
+"CategoryCommerce" = "Commerce";
+"CategoryTime" = "Time";
+"CategoryHealth" = "Health";
+"CategoryShapes" = "Shapes";
+"CategoryArrows" = "Arrows";
+"CategoryIndices" = "Indices";
+"CategoryMath" = "Math";
