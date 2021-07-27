@@ -39,7 +39,7 @@ class SymbolView: NSCollectionViewItem {
   
   override var isSelected: Bool {
     didSet {
-      self.boxView.fillColor = isSelected ? .controlAccentColor.withAlphaComponent(0.25) : .blue
+      self.boxView.fillColor = isSelected ? NSColor.controlAccentColor.withAlphaComponent(0.25) : NSColor.clear
     }
   }
   
