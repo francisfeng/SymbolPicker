@@ -2,6 +2,10 @@
 
 A SF Symbols picker for Mac apps. Built with AppKit.
 
+## Install
+
+Add `https://github.com/francisfeng/SymbolPicker` in the [“Swift Package Manager” tab in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
+
 ## Usage
 
 ![screenshot of Symbol Picker](https://raw.githubusercontent.com/francisfeng/SymbolPicker/main/images/screenshot.PNG)
