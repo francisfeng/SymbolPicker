@@ -49,6 +49,8 @@ open class WindowController: NSWindowController {
       searchFieldDelegate = collections
       sidebar.delegate = collections
       collectionViewController = collections
+      splitViewController.symbolCollectionViewController = collectionViewController
+      collectionViewController?.collectionView.delegate = splitViewController
     }
   }
   

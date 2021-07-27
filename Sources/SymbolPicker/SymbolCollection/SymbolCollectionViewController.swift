@@ -83,19 +83,6 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     return item
   }
   
-  func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-    currentSelected = indexPaths
-    guard let indexPath = indexPaths.first else { return }
-    let symbol = symbolsName[indexPath.item]
-    if isColorChanged {
-      pickerDelegate?.symbolPicker(symbol, color: NSColorPanel.shared.color)
-    } else {
-      pickerDelegate?.symbolPicker(symbol, color: nil)
-    }
-    guard let window = view.window else { return }
-    window.sheetParent?.endSheet(window, returnCode: .OK)
-  }
-  
   // Used in SymbolView. Double-click to select current and exit.
   func selectCurrent() {
     let selectionIndexes = collectionView.selectionIndexes

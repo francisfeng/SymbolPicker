@@ -907,7 +907,6 @@
                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <outlet property="dataSource" destination="418-Pv-aui" id="WUy-XL-cqL"/>
-                                        <outlet property="delegate" destination="418-Pv-aui" id="w2a-Pe-iyW"/>
                                     </connections>
                                 </collectionView>
                             </subviews>
