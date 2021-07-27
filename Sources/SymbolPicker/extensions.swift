@@ -1,6 +1,6 @@
 //
 //  extensions.swift
-//  SFSymbolsPicker
+//  SymbolPicker
 //
 //  Created by Francis Feng on 2021/5/4.
 //

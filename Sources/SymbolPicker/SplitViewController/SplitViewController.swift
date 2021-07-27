@@ -1,6 +1,6 @@
 //
 //  SplitViewController.swift
-//  SFSymbolsPicker
+//  SymbolPicker
 //
 //  Created by Francis Feng on 2021/7/26.
 //

@@ -1,6 +1,6 @@
 //
 //  Symbol.swift
-//  SFSymbolsPicker
+//  SymbolPicker
 //
 //  Created by Francis Feng on 2021/5/4.
 //
@@ -32,6 +32,7 @@ class Symbol {
     case Math = "Math"
   }
   
+  // localized key
   static let name: [Category:String] = [
     .All: "CategoryAll",
     .Communication: "CategoryCommunication",
