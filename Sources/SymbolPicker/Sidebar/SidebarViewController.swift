@@ -93,7 +93,7 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
     if let node = SidebarViewController.node(from: seletedRow ?? 0) {
       delegate?.sidebarController(self, node: node)
     }
-    windowController?.searchField.stringValue = ""
+    windowController?.searchField?.stringValue = ""
   }
 }
 

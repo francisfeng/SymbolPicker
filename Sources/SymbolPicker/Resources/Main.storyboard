@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="00e-Iv-nRI">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="00e-Iv-nRI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19142.2"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
-        <capability name="Search Toolbar Item" minToolsVersion="12.0" minSystemVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -699,30 +699,20 @@
                         <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="oVl-Vd-iBw">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="MGO-nb-Vbe"/>
-                                <searchToolbarItem implicitItemIdentifier="7DC8FE9D-1CD6-44B9-8879-B506EF9DDFF7" label="Search" paletteLabel="Search" visibilityPriority="1001" id="ZkM-mZ-xio">
-                                    <nil key="toolTip"/>
-                                    <searchField key="view" verticalHuggingPriority="750" textCompletion="NO" id="LsR-uV-vv6" customClass="EditableNSSearchField" customModule="SymbolPicker">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="21"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="dqY-ht-Myz">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </searchFieldCell>
-                                    </searchField>
-                                </searchToolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="MGO-nb-Vbe"/>
-                                <searchToolbarItem reference="ZkM-mZ-xio"/>
                             </defaultToolbarItems>
+                            <connections>
+                                <outlet property="delegate" destination="00e-Iv-nRI" id="NlV-BM-SUa"/>
+                            </connections>
                         </toolbar>
                         <connections>
                             <outlet property="delegate" destination="00e-Iv-nRI" id="drQ-nh-tmI"/>
                         </connections>
                     </window>
                     <connections>
-                        <outlet property="searchField" destination="LsR-uV-vv6" id="qxX-ij-MeS"/>
+                        <outlet property="toolbar" destination="oVl-Vd-iBw" id="bIf-Da-R9w"/>
                         <segue destination="RzZ-5a-ODS" kind="relationship" relationship="window.shadowedContentViewController" id="Idc-uk-wG4"/>
                     </connections>
                 </windowController>
@@ -763,7 +753,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="360"/>
@@ -894,7 +884,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="0xU-UD-frG">
                             <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <collectionView selectable="YES" allowsEmptySelection="NO" id="6m3-2d-zHR">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
