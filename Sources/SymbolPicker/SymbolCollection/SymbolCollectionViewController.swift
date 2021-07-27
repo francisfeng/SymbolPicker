@@ -24,17 +24,9 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   weak var pickerDelegate: SymbolPickerDelegate?
   weak var sidebarDelegate: SidebarController?
   
-  let nibIdentifier = NSUserInterfaceItemIdentifier.init("SymbolView")
-  
-  deinit {
-    print(#function, "SymbolCollectionViewController")
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     observeColorWellChange()
-    let nib = NSNib(nibNamed: "SymbolView", bundle: .module)
-    collectionView.register(nib, forItemWithIdentifier: nibIdentifier)
   }
   
   func configureCurrentItem(symbol: String, color: NSColor) {
@@ -53,8 +45,11 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     isColorChanged = true
     color = NSColorPanel.shared.color
     collectionView.reloadData()
-    if let selected = currentSelected {
-      collectionView.selectItems(at: selected, scrollPosition: .centeredVertically)
+    
+    if let selected = currentSelected?.first {
+      if let item = collectionView.item(at: selected) {
+        item.isSelected = true
+      }
     }
   }
   
@@ -67,20 +62,17 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   }
   
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    let item = collectionView.makeItem(withIdentifier: nibIdentifier, for: indexPath)
+    let symbolItem = SymbolView()
     let symbol = symbolsName[indexPath.item]
-    if let symbolItem = item as? SymbolView {
-      if #available(macOS 11.0, *) {
-        let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
-        let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
-        symbolItem.imageView?.image = image
-      }
-      symbolItem.imageView?.contentTintColor = color
-      symbolItem.imageView?.toolTip = symbol
-      symbolItem.viewController = self
-      return symbolItem
+    if #available(macOS 11.0, *) {
+      let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
+      let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
+      symbolItem.imageViewForSymbol.image = image
     }
-    return item
+    symbolItem.imageViewForSymbol.contentTintColor = color
+    symbolItem.imageViewForSymbol.toolTip = symbol
+    symbolItem.viewController = self
+    return symbolItem
   }
   
   // Used in SymbolView. Double-click to select current and exit.
@@ -105,13 +97,23 @@ extension SymbolCollectionViewController: SidebarController {
     symbolsName = Symbol.symbols(in: node.category)
     originalSymbolsName = Symbol.symbols(in: node.category)
     collectionView.reloadData()
+    
     if let name = currentSymbolName,
       let index = originalSymbolsName.firstIndex(of: name) {
+      
       let indexPath = IndexPath(item: index, section: 0)
       let set = Set([indexPath])
-      collectionView.selectItems(at: set, scrollPosition: .centeredVertically)
-      collectionView.scrollToItems(at: set, scrollPosition: .centeredVertically)
+      
       currentSelected = set
+      
+      collectionView.selectItems(at: set, scrollPosition: .centeredVertically)
+      
+      // The above line scrolls to the right position,
+      // but the item may not be selected.
+      if let item = collectionView.item(at: indexPath) {
+        item.isSelected = true
+      }
+     
     }
   }
 }

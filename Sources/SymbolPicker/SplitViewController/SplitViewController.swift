@@ -36,4 +36,16 @@ class SplitViewController: NSSplitViewController, NSCollectionViewDelegate {
     guard let window = view.window else { return }
     window.sheetParent?.endSheet(window, returnCode: .OK)
   }
+  
+  func collectionView(_ collectionView: NSCollectionView,
+                   willDisplay item: NSCollectionViewItem,
+                   forRepresentedObjectAt indexPath: IndexPath) {
+    
+  }
+  
+  func collectionView(_ collectionView: NSCollectionView,
+              didEndDisplaying item: NSCollectionViewItem,
+              forRepresentedObjectAt indexPath: IndexPath) {
+    
+  }
 }
