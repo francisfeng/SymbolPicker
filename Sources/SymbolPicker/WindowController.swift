@@ -21,15 +21,16 @@ open class WindowController: NSWindowController {
   
   weak var collectionViewController: SymbolCollectionViewController?
   
+  var lastTypeTime = Date()
+  var minimumTypeDuration: TimeInterval = 0.3
+  
+  var workItem: DispatchWorkItem?
+  
   open override func windowDidLoad() {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
     configureSearch()
     configureDelegates()
-  }
-  
-  deinit {
-    print(#function, "Symbol Picker", window)
   }
   
   func configureCurrentItem(symbol: String, color: NSColor) {
@@ -56,7 +57,14 @@ open class WindowController: NSWindowController {
   
   @objc func searchToolbarItemAction(_ sender: NSSearchField) {
     if let text = sender.cell?.stringValue {
-      searchFieldDelegate?.searchField(text)
+      
+      self.workItem?.cancel()
+      let workItem = DispatchWorkItem { [weak self] in
+        self?.searchFieldDelegate?.searchField(text.lowercased())
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + minimumTypeDuration, execute: workItem)
+      self.workItem = workItem
     }
   }
 }

@@ -18,6 +18,10 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
   
   weak var delegate: SidebarController?
   
+  var windowController: WindowController? {
+    return self.view.window?.windowController as? WindowController
+  }
+  
   @objc dynamic var content = [AnyObject]()
   
   override func viewDidLoad() {
@@ -89,6 +93,7 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
     if let node = SidebarViewController.node(from: seletedRow ?? 0) {
       delegate?.sidebarController(self, node: node)
     }
+    windowController?.searchField.stringValue = ""
   }
 }
 

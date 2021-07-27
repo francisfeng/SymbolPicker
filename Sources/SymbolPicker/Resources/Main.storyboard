@@ -702,7 +702,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="MGO-nb-Vbe"/>
                                 <searchToolbarItem implicitItemIdentifier="7DC8FE9D-1CD6-44B9-8879-B506EF9DDFF7" label="Search" paletteLabel="Search" visibilityPriority="1001" id="ZkM-mZ-xio">
                                     <nil key="toolTip"/>
-                                    <searchField key="view" verticalHuggingPriority="750" textCompletion="NO" id="LsR-uV-vv6">
+                                    <searchField key="view" verticalHuggingPriority="750" textCompletion="NO" id="LsR-uV-vv6" customClass="EditableNSSearchField" customModule="SymbolPicker">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="dqY-ht-Myz">
