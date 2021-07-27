@@ -687,8 +687,8 @@
         <scene sceneID="3ID-S4-t5z">
             <objects>
                 <windowController id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
-                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" toolbarStyle="compact" id="LDa-mo-e1J">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="324" width="580" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
