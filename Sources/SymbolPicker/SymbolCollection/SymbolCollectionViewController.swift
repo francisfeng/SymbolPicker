@@ -27,6 +27,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   override func viewDidLoad() {
     super.viewDidLoad()
     observeColorWellChange()
+    collectionView.wantsLayer = true
     collectionView.enclosingScrollView?.scrollerStyle = .overlay
   }
   

@@ -27,6 +27,12 @@ class SymbolView: NSCollectionViewItem {
     fatalError("init(coder:) has not been implemented")
   }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.postsFrameChangedNotifications = false
+    view.postsBoundsChangedNotifications = false
+  }
+  
   override func mouseDown(with event: NSEvent) {
     if event.clickCount > 1 && isSelected {
       viewController?.selectCurrent()
