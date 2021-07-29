@@ -31,6 +31,7 @@ class SymbolView: NSCollectionViewItem {
     super.viewDidLoad()
     view.postsFrameChangedNotifications = false
     view.postsBoundsChangedNotifications = false
+    view.wantsLayer = true
   }
   
   override func mouseDown(with event: NSEvent) {
@@ -56,6 +57,7 @@ class SymbolView: NSCollectionViewItem {
     boxView.cornerRadius = 12
     boxView.boxType = .custom
     boxView.borderColor = .separatorColor
+    boxView.wantsLayer = true
     self.boxView = boxView
     view.addSubview(boxView)
   }
@@ -63,6 +65,7 @@ class SymbolView: NSCollectionViewItem {
   func addImageView() {
     let imageView = NSImageView()
     self.imageViewForSymbol = imageView
+    imageView.wantsLayer = true
     boxView.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
