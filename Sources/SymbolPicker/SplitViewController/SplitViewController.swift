@@ -23,29 +23,19 @@ class SplitViewController: NSSplitViewController, NSCollectionViewDelegate {
     return symbolCollectionViewController!.symbolsName
   }
   
-  
   func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
     symbolCollectionViewController?.currentSelected = indexPaths
+    
     guard let indexPath = indexPaths.first else { return }
+    guard let window = view.window else { return }
+    
     let symbol = symbolsName[indexPath.item]
     if isColorChanged {
       pickerDelegate?.symbolPicker(symbol, color: NSColorPanel.shared.color)
     } else {
       pickerDelegate?.symbolPicker(symbol, color: nil)
     }
-    guard let window = view.window else { return }
     window.sheetParent?.endSheet(window, returnCode: .OK)
   }
   
-  func collectionView(_ collectionView: NSCollectionView,
-                   willDisplay item: NSCollectionViewItem,
-                   forRepresentedObjectAt indexPath: IndexPath) {
-    
-  }
-  
-  func collectionView(_ collectionView: NSCollectionView,
-              didEndDisplaying item: NSCollectionViewItem,
-              forRepresentedObjectAt indexPath: IndexPath) {
-    
-  }
 }
