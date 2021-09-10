@@ -12,7 +12,7 @@ Add `https://github.com/francisfeng/SymbolPicker` in the [“Swift Package Manag
 
 ## Usage
 
-![screenshot of Symbol Picker](https://raw.githubusercontent.com/francisfeng/SymbolPicker/main/Images/screenshot.PNG)
+![screenshot of Symbol Picker](Images/screenshot.PNG)
 
 1. AppKit
 ```swift
