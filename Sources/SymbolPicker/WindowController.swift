@@ -30,7 +30,7 @@ open class WindowController: NSWindowController {
   open override func windowDidLoad() {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
-//    window?.isMovable = false
+    window?.isMovable = false
     configureDelegates()
   }
   

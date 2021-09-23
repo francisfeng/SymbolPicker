@@ -7,28 +7,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Application-->
-        <scene sceneID="JPo-4y-FX3">
-            <objects>
-                <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6"/>
-                    <connections>
-                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
-                    </connections>
-                </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SFSymbolsPicker" customModuleProvider="target"/>
-                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
-        </scene>
         <!--Window Controller-->
         <scene sceneID="3ID-S4-t5z">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
-                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" deferred="NO" frameAutosaveName="" animationBehavior="default" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="SymbolPicker" animationBehavior="default" tabbingIdentifier="SymbolPickerWindow" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
+                        <windowStyleMask key="styleMask" titled="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="294" y="324" width="580" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
                         <value key="minSize" type="size" width="450" height="320"/>
