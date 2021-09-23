@@ -15,11 +15,7 @@ extension String {
 
 extension NSImage {
   convenience init?(_ name: String) {
-    if #available(macOS 11.0, *) {
-      self.init(systemSymbolName: name, accessibilityDescription: nil)
-    } else {
-      self.init(named: name)
-    }
+    self.init(systemSymbolName: name, accessibilityDescription: nil)
   }
 }
 

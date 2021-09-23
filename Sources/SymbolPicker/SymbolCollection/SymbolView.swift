@@ -7,6 +7,10 @@
 
 import AppKit
 
+extension NSUserInterfaceItemIdentifier {
+  static let SymbolView = Self("SymbolView")
+}
+
 class SymbolView: NSCollectionViewItem {
   
   var boxView: NSBox!

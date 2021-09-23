@@ -13,6 +13,8 @@ public protocol SymbolPickerDelegate: AnyObject {
 
 class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
   
+  var symbolsCache: [String:NSImage] = [:]
+  
   @IBOutlet weak var collectionView: NSCollectionView!
   
   var originalSymbolsName: [String] = []
@@ -29,6 +31,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     observeColorWellChange()
     collectionView.wantsLayer = true
     collectionView.enclosingScrollView?.scrollerStyle = .overlay
+    collectionView.register(SymbolView.self, forItemWithIdentifier: .SymbolView)
   }
   
   func configureCurrentItem(symbol: String, color: NSColor) {
@@ -66,11 +69,19 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
     let symbolItem = SymbolView()
     let symbol = symbolsName[indexPath.item]
-    if #available(macOS 11.0, *) {
-      let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
-      let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
-      symbolItem.imageViewForSymbol.image = image
+    let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
+    let image: NSImage?
+    
+    if symbolsCache.keys.contains(symbol) {
+      image = symbolsCache[symbol]
+    } else if let shouldCached = NSImage(symbol)?.withSymbolConfiguration(configuration) {
+      symbolsCache[symbol] = shouldCached
+      image = shouldCached
+    } else {
+      image = nil
     }
+    
+    symbolItem.imageViewForSymbol.image = image
     symbolItem.imageViewForSymbol.contentTintColor = color
     symbolItem.imageViewForSymbol.toolTip = symbol
     symbolItem.viewController = self

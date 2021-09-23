@@ -30,7 +30,7 @@ open class WindowController: NSWindowController {
   open override func windowDidLoad() {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
-    window?.isMovable = false
+//    window?.isMovable = false
     configureDelegates()
   }
   
@@ -95,21 +95,11 @@ extension WindowController: NSToolbarDelegate {
   public func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
                willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
     if itemIdentifier == .searchItem {
-      if #available(macOS 11.0, *) {
-        let toolbarItem = NSSearchToolbarItem(itemIdentifier: itemIdentifier)
-        toolbarItem.searchField.target = self
-        toolbarItem.searchField.action = #selector(searchToolbarItemAction(_:))
-        self.searchField = toolbarItem.searchField
-        return toolbarItem
-      } else {
-        let toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
-        let searchField = NSSearchField()
-        toolbarItem.view = searchField
-        self.searchField = searchField
-        self.searchField?.target = self
-        self.searchField?.action = #selector(searchToolbarItemAction(_:))
-        return toolbarItem
-      }
+      let toolbarItem = NSSearchToolbarItem(itemIdentifier: itemIdentifier)
+      toolbarItem.searchField.target = self
+      toolbarItem.searchField.action = #selector(searchToolbarItemAction(_:))
+      self.searchField = toolbarItem.searchField
+      return toolbarItem
     }
     return nil
   }
