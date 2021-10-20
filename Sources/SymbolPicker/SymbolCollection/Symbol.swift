@@ -82,7 +82,15 @@ class Symbol {
   ]
   
   static func symbols(in category: Category) -> [String] {
-    if let url = Bundle.module.url(forResource: category.rawValue, withExtension: "txt") {
+    let prefix: String
+    
+    if #available(macOS 12.0, *) {
+      prefix = "Monterey-"
+    } else {
+      prefix = "BigSur-"
+    }
+    
+    if let url = Bundle.module.url(forResource: prefix + category.rawValue, withExtension: "txt") {
       do {
         let content = try String(contentsOf: url)
         let symbols = content.components(separatedBy: "\n").filter { !$0.isEmpty }
