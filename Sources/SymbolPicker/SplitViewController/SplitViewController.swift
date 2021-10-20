@@ -35,6 +35,7 @@ class SplitViewController: NSSplitViewController, NSCollectionViewDelegate {
     } else {
       pickerDelegate?.symbolPicker(symbol, color: nil)
     }
+    symbolsCache.removeAllObjects()
     window.sheetParent?.endSheet(window, returnCode: .OK)
   }
   
