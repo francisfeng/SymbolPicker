@@ -12,7 +12,7 @@ open class SymbolPicker {
   
   public static func windowController(symbol: String, color: NSColor, delegate: SymbolPickerDelegate, title: String? = nil) -> NSWindowController? {
     let storyboard = NSStoryboard.init(name: "SymbolPicker", bundle: .module)
-    if let controller = storyboard.instantiateInitialController() as? WindowController {
+    if let controller = storyboard.instantiateController(withIdentifier: .init("main")) as? WindowController {
       controller.configureCurrentItem(symbol: symbol, color: color)
       controller.delegate = delegate
       if let title = title {

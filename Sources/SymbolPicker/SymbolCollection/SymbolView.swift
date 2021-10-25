@@ -23,19 +23,15 @@ class SymbolView: NSCollectionViewItem {
   init() {
     super.init(nibName: nil, bundle: .module)
     view = NSView(frame: viewFrame)
+    view.postsFrameChangedNotifications = false
+    view.postsBoundsChangedNotifications = false
+    view.wantsLayer = true
     addBoxView()
     addImageView()
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.postsFrameChangedNotifications = false
-    view.postsBoundsChangedNotifications = false
-    view.wantsLayer = true
   }
   
   override func mouseDown(with event: NSEvent) {

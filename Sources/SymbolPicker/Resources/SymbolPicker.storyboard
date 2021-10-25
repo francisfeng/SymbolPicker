@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="00e-Iv-nRI">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Window Controller-->
         <scene sceneID="3ID-S4-t5z">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="main" showSeguePresentationStyle="single" id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
                     <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="SymbolPicker" animationBehavior="default" tabbingIdentifier="SymbolPickerWindow" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
                         <windowStyleMask key="styleMask" titled="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="294" y="324" width="630" height="320"/>
