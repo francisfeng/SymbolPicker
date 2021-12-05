@@ -13,8 +13,8 @@ extension NSUserInterfaceItemIdentifier {
 
 class SymbolView: NSCollectionViewItem {
   
-  var boxView: NSBox!
-  var imageViewForSymbol: NSImageView!
+  weak var boxView: NSBox!
+  weak var imageViewForSymbol: NSImageView!
   
   let viewFrame = NSRect(x: 0, y: 0, width: 44, height: 36)
   
@@ -25,7 +25,7 @@ class SymbolView: NSCollectionViewItem {
     view = NSView(frame: viewFrame)
     view.postsFrameChangedNotifications = false
     view.postsBoundsChangedNotifications = false
-    view.wantsLayer = true
+    view.wantsLayer = false
     addBoxView()
     addImageView()
   }
@@ -57,7 +57,7 @@ class SymbolView: NSCollectionViewItem {
     boxView.cornerRadius = 12
     boxView.boxType = .custom
     boxView.borderColor = .separatorColor
-    boxView.wantsLayer = true
+    boxView.wantsLayer = false
     self.boxView = boxView
     view.addSubview(boxView)
   }
@@ -65,7 +65,7 @@ class SymbolView: NSCollectionViewItem {
   func addImageView() {
     let imageView = NSImageView()
     self.imageViewForSymbol = imageView
-    imageView.wantsLayer = true
+    imageView.wantsLayer = false
     boxView.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([

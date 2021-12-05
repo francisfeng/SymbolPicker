@@ -31,6 +31,7 @@ open class WindowController: NSWindowController {
     super.windowDidLoad()
     window?.title = "SFSymbols".localized
     window?.isMovable = false
+    window?.isReleasedWhenClosed = true
     configureDelegates()
   }
   

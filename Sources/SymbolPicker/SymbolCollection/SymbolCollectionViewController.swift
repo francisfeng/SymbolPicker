@@ -11,8 +11,6 @@ public protocol SymbolPickerDelegate: AnyObject {
   func symbolPicker(_ symbol: String, color: NSColor?)
 }
 
-let symbolsCache = NSCache<NSString, NSImage>()
-
 class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
   
   @IBOutlet weak var collectionView: NSCollectionView!
@@ -71,20 +69,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     let symbol = symbolsName[indexPath.item]
     let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
     
-    autoreleasepool {
-      var image: NSImage?
-      if let cached = symbolsCache.object(forKey: NSString(string: symbol)) {
-        image = cached
-      } else if let shouldCached = NSImage(symbol)?.withSymbolConfiguration(configuration) {
-        symbolsCache.setObject(shouldCached, forKey: NSString(string: symbol))
-        image = shouldCached
-      } else {
-        image = nil
-      }
-    
-    
-      symbolItem.imageViewForSymbol.image = image
-    }
+    symbolItem.imageViewForSymbol.image = NSImage(symbol)?.withSymbolConfiguration(configuration)
     symbolItem.imageViewForSymbol.contentTintColor = color
     symbolItem.imageViewForSymbol.toolTip = symbol
     symbolItem.viewController = self
@@ -102,7 +87,6 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
         pickerDelegate?.symbolPicker(symbol, color: nil)
       }
       guard let window = view.window else { return }
-      symbolsCache.removeAllObjects()
       window.sheetParent?.endSheet(window, returnCode: .OK)
     }
   }
