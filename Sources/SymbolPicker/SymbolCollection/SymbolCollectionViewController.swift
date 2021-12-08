@@ -68,8 +68,9 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     let symbolItem = SymbolView()
     let symbol = symbolsName[indexPath.item]
     let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
-    
-    symbolItem.imageViewForSymbol.image = NSImage(symbol)?.withSymbolConfiguration(configuration)
+    let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
+    image?.cacheMode = .never
+    symbolItem.imageViewForSymbol.image = image
     symbolItem.imageViewForSymbol.contentTintColor = color
     symbolItem.imageViewForSymbol.toolTip = symbol
     symbolItem.viewController = self
