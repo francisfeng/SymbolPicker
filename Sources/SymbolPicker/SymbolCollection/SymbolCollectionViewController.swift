@@ -30,11 +30,37 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     collectionView.wantsLayer = true
     collectionView.enclosingScrollView?.scrollerStyle = .overlay
     collectionView.register(SymbolView.self, forItemWithIdentifier: .SymbolView)
+    setupLayout()
   }
   
   func configureCurrentItem(symbol: String, color: NSColor) {
     self.currentSymbolName = symbol
     self.color = color
+  }
+  
+  private func setupLayout() {
+    collectionView.collectionViewLayout = gridLayout()
+  }
+  
+  private func gridLayout() -> NSCollectionViewLayout {
+    let spacing: CGFloat = 15
+    let itemWidth: CGFloat = 44
+    let itemHeight: CGFloat = 36
+    
+    let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(itemHeight))
+    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    
+    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(itemHeight))
+    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+    
+    group.interItemSpacing = .flexible(spacing)
+    
+    let section = NSCollectionLayoutSection(group: group)
+    section.interGroupSpacing = spacing
+    section.contentInsets = .init(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
+    
+    let layout = NSCollectionViewCompositionalLayout(section: section)
+    return layout
   }
   
   func observeColorWellChange() {
@@ -65,16 +91,25 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   }
   
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    let symbolItem = SymbolView()
     let symbol = symbolsName[indexPath.item]
+    
+    if let symbolItem = collectionView.makeItem(withIdentifier: .SymbolView, for: indexPath) as? SymbolView {
+      configureSymbol(symbolItem, symbol: symbol)
+      return symbolItem
+    }
+    
+    let symbolItem = SymbolView()
+    configureSymbol(symbolItem, symbol: symbol)
+    return symbolItem
+  }
+  
+  func configureSymbol(_ view: SymbolView, symbol: String) {
     let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
     let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
-    image?.cacheMode = .never
-    symbolItem.imageViewForSymbol.image = image
-    symbolItem.imageViewForSymbol.contentTintColor = color
-    symbolItem.imageViewForSymbol.toolTip = symbol
-    symbolItem.viewController = self
-    return symbolItem
+    view.imageViewForSymbol.image = image
+    view.imageViewForSymbol.contentTintColor = color
+    view.imageViewForSymbol.toolTip = symbol
+    view.viewController = self
   }
   
   // Used in SymbolView. Double-click to select current and exit.

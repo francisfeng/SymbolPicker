@@ -20,12 +20,12 @@ class SymbolView: NSCollectionViewItem {
   
   weak var viewController: SymbolCollectionViewController?
   
-  init() {
+  override init(nibName: NSNib.Name?, bundle: Bundle?) {
     super.init(nibName: nil, bundle: .module)
     view = NSView(frame: viewFrame)
     view.postsFrameChangedNotifications = false
     view.postsBoundsChangedNotifications = false
-    view.wantsLayer = false
+    view.wantsLayer = true
     addBoxView()
     addImageView()
   }
@@ -57,7 +57,7 @@ class SymbolView: NSCollectionViewItem {
     boxView.cornerRadius = 12
     boxView.boxType = .custom
     boxView.borderColor = .separatorColor
-    boxView.wantsLayer = false
+    boxView.wantsLayer = true
     self.boxView = boxView
     view.addSubview(boxView)
   }
@@ -65,7 +65,7 @@ class SymbolView: NSCollectionViewItem {
   func addImageView() {
     let imageView = NSImageView()
     self.imageViewForSymbol = imageView
-    imageView.wantsLayer = false
+    imageView.wantsLayer = true
     boxView.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
