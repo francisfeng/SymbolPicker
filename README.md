@@ -49,18 +49,5 @@ extension ViewController: SymbolPickerDelegate {
 
 I haven't try it with SwiftUI yet. Any contributions will be welcome.
 
-## Improve User Experience
-
-1. This symbol picker can't be presented like a modal dialog as it also contains a toolbar. To mimic the modal dialog experience, the window is not movable or resizable. You may also want to implement click-outside to dismiss in your app. You can do this by overriding `func mouseDown(with: NSEvent)` in your `NSWindowController` subclass.
-
-```swift
-override func mouseDown(with event: NSEvent) {
-  super.mouseDown(with: event)
-  if let sheetwindow = window?.attachedSheet {
-    window?.endSheet(sheetwindow)
-  }
-}
-```
-
 ## Lisense
 MIT

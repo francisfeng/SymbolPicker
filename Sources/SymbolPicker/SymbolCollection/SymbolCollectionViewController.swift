@@ -24,12 +24,24 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   weak var pickerDelegate: SymbolPickerDelegate?
   weak var sidebarDelegate: SidebarController?
   
+  @IBOutlet weak var titleField: NSTextField!
+  @IBOutlet weak var searchField: NSSearchField!
+  
+  @IBOutlet weak var colorPanelButton: NSButton!
+  var lastTypeTime = Date()
+  var minimumTypeDuration: TimeInterval = 0.3
+  var workItem: DispatchWorkItem?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    observeColorWellChange()
+    collectionView.dataSource = self
     collectionView.wantsLayer = true
+    collectionView.delegate = self
     collectionView.enclosingScrollView?.scrollerStyle = .overlay
     collectionView.register(SymbolView.self, forItemWithIdentifier: .SymbolView)
+    searchField.action = #selector(searchAction)
+    colorPanelButton.action = #selector(showColorPancel)
+    colorPanelButton.target = self
     setupLayout()
   }
   
@@ -63,11 +75,23 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     return layout
   }
   
-  func observeColorWellChange() {
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(updateColor),
-      name: NSColorPanel.colorDidChangeNotification, object: nil)
+  @objc func searchAction(_ sender: Any) {
+    let text = searchField.stringValue
+    self.workItem?.cancel()
+    let workItem = DispatchWorkItem { [weak self] in
+      self?.searchSymbol(text.lowercased())
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + minimumTypeDuration, execute: workItem)
+    self.workItem = workItem
+  }
+  
+  @objc func showColorPancel(_ sender: Any) {
+    let colorPanel = NSColorPanel.shared
+    colorPanel.setTarget(self)
+    colorPanel.setAction(#selector(updateColor))
+    colorPanel.makeKeyAndOrderFront(self)
+    colorPanel.isContinuous = true
   }
   
   @objc func updateColor(sender: Any) {
@@ -155,8 +179,8 @@ extension SymbolCollectionViewController: SidebarController {
   }
 }
 
-extension SymbolCollectionViewController: SearchField {
-  func searchField(_ string: String) {
+extension SymbolCollectionViewController {
+  func searchSymbol(_ string: String) {
     if string.isEmpty {
       symbolsName = originalSymbolsName
     } else {

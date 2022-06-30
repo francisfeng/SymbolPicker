@@ -16,7 +16,7 @@ open class SymbolPicker {
       controller.configureCurrentItem(symbol: symbol, color: color)
       controller.delegate = delegate
       if let title = title {
-        controller.window?.title = title
+        controller.updateWindowTitle(title)
       }
       return controller
     }
