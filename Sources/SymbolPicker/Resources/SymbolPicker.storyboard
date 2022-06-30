@@ -102,13 +102,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="381"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="381"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="381"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -203,7 +203,7 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="psF-fB-Flo" firstAttribute="top" secondItem="mIN-SG-Qls" secondAttribute="top" constant="-20" id="6od-4Z-apx"/>
+                            <constraint firstItem="psF-fB-Flo" firstAttribute="top" secondItem="mIN-SG-Qls" secondAttribute="top" constant="-27" id="6od-4Z-apx"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="trailing" secondItem="psF-fB-Flo" secondAttribute="trailing" id="a11-P5-Ud5"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="leading" secondItem="psF-fB-Flo" secondAttribute="leading" id="c3S-Po-eSB"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="bottom" secondItem="psF-fB-Flo" secondAttribute="bottom" id="qxR-tb-fPh"/>
@@ -236,13 +236,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <box boxType="custom" borderType="none" borderWidth="0.0" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dh0-p4-Rjy">
-                                <rect key="frame" x="0.0" y="263" width="450" height="37"/>
+                                <rect key="frame" x="0.0" y="262" width="450" height="38"/>
                                 <view key="contentView" id="aTG-YV-Pwg">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="37"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-Zm-INp">
-                                            <rect key="frame" x="8" y="10" width="154" height="17"/>
+                                            <rect key="frame" x="8" y="12" width="154" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="qWv-b4-yCj"/>
                                             </constraints>
@@ -253,7 +253,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-lg-XUG" customClass="EditableNSSearchField" customModule="SymbolPicker">
-                                            <rect key="frame" x="195" y="8" width="240" height="22"/>
+                                            <rect key="frame" x="195" y="9" width="240" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="UPY-Xv-OSJ"/>
                                             </constraints>
@@ -264,31 +264,37 @@
                                             </searchFieldCell>
                                         </searchField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-de-YRm">
-                                            <rect key="frame" x="157" y="9" width="28" height="19"/>
+                                            <rect key="frame" x="157" y="10" width="28" height="19"/>
                                             <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="NSColorPanel" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9an-lf-cyY">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="systemBold" size="12"/>
                                             </buttonCell>
                                         </button>
+                                        <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="aw0-13-nei">
+                                            <rect key="frame" x="0.0" y="-2" width="450" height="5"/>
+                                        </box>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Kfb-de-YRm" firstAttribute="centerY" secondItem="nvx-Zm-INp" secondAttribute="centerY" id="2kv-f5-Yaa"/>
                                         <constraint firstItem="nvx-Zm-INp" firstAttribute="leading" secondItem="aTG-YV-Pwg" secondAttribute="leading" constant="10" id="AE1-K2-FIN"/>
+                                        <constraint firstAttribute="bottom" secondItem="aw0-13-nei" secondAttribute="bottom" id="Deh-dP-6mI"/>
+                                        <constraint firstAttribute="trailing" secondItem="aw0-13-nei" secondAttribute="trailing" id="EHe-pq-4od"/>
+                                        <constraint firstItem="ffX-lg-XUG" firstAttribute="centerY" secondItem="nvx-Zm-INp" secondAttribute="centerY" id="MYc-kD-ftN"/>
                                         <constraint firstItem="ffX-lg-XUG" firstAttribute="leading" secondItem="Kfb-de-YRm" secondAttribute="trailing" constant="10" id="Mfl-u3-zWM"/>
-                                        <constraint firstItem="ffX-lg-XUG" firstAttribute="centerY" secondItem="aTG-YV-Pwg" secondAttribute="centerY" id="PRv-RF-vK7"/>
                                         <constraint firstAttribute="trailing" secondItem="ffX-lg-XUG" secondAttribute="trailing" constant="15" id="RgQ-cu-1iT"/>
-                                        <constraint firstItem="nvx-Zm-INp" firstAttribute="centerY" secondItem="aTG-YV-Pwg" secondAttribute="centerY" id="mko-08-Pq9"/>
-                                        <constraint firstItem="Kfb-de-YRm" firstAttribute="centerY" secondItem="aTG-YV-Pwg" secondAttribute="centerY" id="yaQ-Fh-rZs"/>
+                                        <constraint firstItem="nvx-Zm-INp" firstAttribute="centerY" secondItem="aTG-YV-Pwg" secondAttribute="centerY" constant="-1" id="mko-08-Pq9"/>
+                                        <constraint firstItem="aw0-13-nei" firstAttribute="leading" secondItem="aTG-YV-Pwg" secondAttribute="leading" id="tU3-wI-6BZ"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="V6K-Wk-s2c"/>
+                                    <constraint firstAttribute="height" constant="38" id="V6K-Wk-s2c"/>
                                 </constraints>
                                 <color key="fillColor" name="alternatingContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-6p-G1E">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="263"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                 <clipView key="contentView" id="swg-Ag-AQc">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="263"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" id="xe5-QO-pjJ">
