@@ -102,13 +102,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="378"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="378"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="379"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="378"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -241,12 +241,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-Zm-INp">
-                                            <rect key="frame" x="8" y="12" width="154" height="17"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="qWv-b4-yCj"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="YHa-va-kHX">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-Zm-INp">
+                                            <rect key="frame" x="8" y="12" width="141" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Anybox - The Bookmark Manager" usesSingleLineMode="YES" id="YHa-va-kHX">
                                                 <font key="font" metaFont="systemSemibold" size="14"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -263,7 +260,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </searchFieldCell>
                                         </searchField>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-de-YRm">
+                                        <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-de-YRm">
                                             <rect key="frame" x="157" y="10" width="28" height="19"/>
                                             <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="NSColorPanel" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9an-lf-cyY">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -282,6 +279,7 @@
                                         <constraint firstItem="ffX-lg-XUG" firstAttribute="centerY" secondItem="nvx-Zm-INp" secondAttribute="centerY" id="MYc-kD-ftN"/>
                                         <constraint firstItem="ffX-lg-XUG" firstAttribute="leading" secondItem="Kfb-de-YRm" secondAttribute="trailing" constant="10" id="Mfl-u3-zWM"/>
                                         <constraint firstAttribute="trailing" secondItem="ffX-lg-XUG" secondAttribute="trailing" constant="15" id="RgQ-cu-1iT"/>
+                                        <constraint firstItem="Kfb-de-YRm" firstAttribute="leading" secondItem="nvx-Zm-INp" secondAttribute="trailing" constant="10" id="SQK-kB-HDD"/>
                                         <constraint firstItem="nvx-Zm-INp" firstAttribute="centerY" secondItem="aTG-YV-Pwg" secondAttribute="centerY" constant="-1" id="mko-08-Pq9"/>
                                         <constraint firstItem="aw0-13-nei" firstAttribute="leading" secondItem="aTG-YV-Pwg" secondAttribute="leading" id="tU3-wI-6BZ"/>
                                     </constraints>
