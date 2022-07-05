@@ -13,7 +13,7 @@
             <objects>
                 <windowController storyboardIdentifier="main" showSeguePresentationStyle="single" id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
                     <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="SymbolPicker" animationBehavior="default" tabbingIdentifier="SymbolPickerWindow" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
-                        <windowStyleMask key="styleMask" titled="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="294" y="324" width="618" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
                         <value key="minSize" type="size" width="618" height="320"/>
@@ -102,13 +102,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="365"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="365"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="365"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -189,7 +189,8 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="mIy-nk-I0N"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="dm2-Ck-vyv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="mIy-nk-I0N"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="360" id="rJv-Lw-g29"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="p6S-v3-7Uc">
@@ -203,7 +204,7 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="psF-fB-Flo" firstAttribute="top" secondItem="mIN-SG-Qls" secondAttribute="top" constant="-37" id="6od-4Z-apx"/>
+                            <constraint firstItem="psF-fB-Flo" firstAttribute="top" secondItem="mIN-SG-Qls" secondAttribute="top" id="6od-4Z-apx"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="trailing" secondItem="psF-fB-Flo" secondAttribute="trailing" id="a11-P5-Ud5"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="leading" secondItem="psF-fB-Flo" secondAttribute="leading" id="c3S-Po-eSB"/>
                             <constraint firstItem="mIN-SG-Qls" firstAttribute="bottom" secondItem="psF-fB-Flo" secondAttribute="bottom" id="qxR-tb-fPh"/>
