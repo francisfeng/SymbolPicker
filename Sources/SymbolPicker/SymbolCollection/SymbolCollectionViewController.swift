@@ -135,6 +135,10 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     view.imageViewForSymbol.contentTintColor = color
     view.imageViewForSymbol.toolTip = symbol
     view.viewController = self
+    
+    if symbol == currentSymbolName {
+      view.isSelected = true
+    }
   }
   
   // Used in SymbolView. Double-click to select current and exit.
@@ -159,9 +163,12 @@ extension SymbolCollectionViewController: SidebarController {
     symbolsName = Symbol.symbols(in: node.category)
     originalSymbolsName = Symbol.symbols(in: node.category)
     collectionView.reloadData()
-    
+    selectCurrentSymbolIfPossible()
+  }
+  
+  func selectCurrentSymbolIfPossible() {
     if let name = currentSymbolName,
-      let index = originalSymbolsName.firstIndex(of: name) {
+      let index = symbolsName.firstIndex(of: name) {
       
       let indexPath = IndexPath(item: index, section: 0)
       let set = Set([indexPath])
@@ -169,13 +176,6 @@ extension SymbolCollectionViewController: SidebarController {
       currentSelected = set
       
       collectionView.selectItems(at: set, scrollPosition: .centeredVertically)
-      
-      // The above line scrolls to the right position,
-      // but the item may not be selected.
-      if let item = collectionView.item(at: indexPath) {
-        item.isSelected = true
-      }
-     
     }
   }
 }
