@@ -13,7 +13,7 @@ public protocol SymbolPickerDelegate: AnyObject {
 
 class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
   
-  @IBOutlet weak var collectionView: NSCollectionView!
+  @IBOutlet weak var collectionView: CollectionView!
   
   var originalSymbolsName: [String] = []
   var symbolsName: [String] = []
@@ -39,6 +39,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     collectionView.delegate = self
     collectionView.enclosingScrollView?.scrollerStyle = .overlay
     collectionView.register(SymbolView.self, forItemWithIdentifier: .SymbolView)
+    collectionView.allowsEmptySelection = false
     searchField.action = #selector(searchAction)
     colorPanelButton.action = #selector(showColorPancel)
     colorPanelButton.target = self

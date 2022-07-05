@@ -46,7 +46,8 @@ class SymbolView: NSCollectionViewItem {
   
   override var isSelected: Bool {
     didSet {
-      self.boxView.fillColor = isSelected ? NSColor.controlAccentColor.withAlphaComponent(0.25) : NSColor.clear
+      self.boxView.borderWidth = isSelected ? 2 : 1
+      self.boxView.borderColor = isSelected ? .controlAccentColor : .separatorColor
     }
   }
   
@@ -54,7 +55,7 @@ class SymbolView: NSCollectionViewItem {
     let boxView = NSBox(frame: viewFrame)
     boxView.layer?.masksToBounds = true
     boxView.titlePosition = .noTitle
-    boxView.cornerRadius = 12
+    boxView.cornerRadius = 8
     boxView.boxType = .custom
     boxView.borderColor = .separatorColor
     boxView.wantsLayer = true

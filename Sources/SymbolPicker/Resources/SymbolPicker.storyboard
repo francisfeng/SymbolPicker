@@ -102,13 +102,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="373"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="373"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="373"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="371"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -306,7 +306,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" id="xe5-QO-pjJ">
+                                        <collectionView selectable="YES" id="xe5-QO-pjJ" customClass="CollectionView" customModule="SymbolPicker">
                                             <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="ank-10-l1u">
