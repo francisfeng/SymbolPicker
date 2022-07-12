@@ -46,6 +46,13 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     setupLayout()
   }
   
+  override func viewDidDisappear() {
+    super.viewDidDisappear()
+    if NSColorPanel.shared.isVisible {
+      NSColorPanel.shared.orderOut(self)
+    }
+  }
+  
   func configureCurrentItem(symbol: String, color: NSColor) {
     self.currentSymbolName = symbol
     self.color = color
