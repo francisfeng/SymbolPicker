@@ -20,19 +20,19 @@ Add `https://github.com/francisfeng/SymbolPicker` in the [“Swift Package Manag
 // in your NSViewController subclass
 import SymbolPicker
 
-@objc func pickIcon(_ sender: NSMenuItem) {
+@objc func pickIcon(_ sender: Any) {
   if let windowController = SymbolPicker.windowController(
-      symbol: collection.symbol,
-      color: collection.color ?? .labelColor,
+      symbol: selectedSFSymbol,
+      color: symbolColor,
       delegate: self,
-      title: collection.name),
+      title: windowTitleForTheSymbolPicker),
      let iconSheet = windowController.window {
     
     // You need to persist this windowController in your app.
-    symbolPickerWindowController = windowController
+    self.symbolPickerWindowController = windowController
     
     window.beginSheet(iconSheet) {
-      _ in
+      [unowned self] _ in
       self.symbolPickerWindowController = nil
     }
   }
