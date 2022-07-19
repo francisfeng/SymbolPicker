@@ -14,6 +14,13 @@ class FieldEditor: NSTextView {
   private lazy var radius = caretWidth / 2
   private lazy var displayAdjustment = caretWidth - 1
   
+  override var isFieldEditor: Bool {
+    get {
+      return true
+    }
+    set {}
+  }
+  
   // Source: https://gist.github.com/importRyan/669999190f3b4db8e031c5971e7fa7ed
   open override func drawInsertionPoint(in rect: NSRect, color: NSColor, turnedOn flag: Bool) {
 
