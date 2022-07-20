@@ -15,13 +15,10 @@ open class WindowController: NSWindowController {
   
   weak var collectionViewController: SymbolCollectionViewController?
   
-  let fieldEditor = FieldEditor(frame: .zero)
-  
   open override func windowDidLoad() {
     super.windowDidLoad()
     updateWindowTitle("SFSymbols".localized)
     window?.isReleasedWhenClosed = true
-    window?.delegate = self
     configureDelegates()
   }
   
@@ -49,11 +46,5 @@ open class WindowController: NSWindowController {
 extension WindowController: SymbolPickerDelegate {
   public func symbolPicker(_ symbol: String, color: NSColor?) {
     delegate?.symbolPicker(symbol, color: color)
-  }
-}
-
-extension WindowController: NSWindowDelegate {
-  public func windowWillReturnFieldEditor(_ sender: NSWindow, to client: Any?) -> Any? {
-    return fieldEditor
   }
 }
