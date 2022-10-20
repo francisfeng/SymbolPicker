@@ -27,7 +27,8 @@ let package = Package(
       dependencies: [],
       resources: [
         .process("Resources/Big Sur"),
-        .process("Resources/Monterey")
+        .process("Resources/Monterey"),
+        .process("Resources/Ventura")
       ]),
     .testTarget(
       name: "SymbolPickerTests",

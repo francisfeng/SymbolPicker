@@ -12,12 +12,17 @@ class Symbol {
     case All = "All"
     case Communication = "Communication"
     case Weather = "Weather"
-    case ObjectsTools = "Object & Tools"
+    case ObjectsTools = "Objects & Tools"
     case Devices = "Devices"
+    case CameraPhotos = "Camera & Photos"
     case Gaming = "Gaming"
     case Connectivity = "Connectivity"
     case Transportation = "Transportation"
+    case Accessibility = "Accessibility"
+    case PrivacySecurity = "Privacy & Security"
     case Human = "Human"
+    case Home = "Home"
+    case Fitness = "Fitness"
     case Nature = "Nature"
     case Editing = "Editing"
     case TextFormatting = "Text Formatting"
@@ -30,61 +35,98 @@ class Symbol {
     case Arrows = "Arrows"
     case Indices = "Indices"
     case Math = "Math"
+    
+    static let all: [Category] = {
+      var categories = Category.allCases
+     
+      if #available(macOS 13.0, *) {
+       return categories
+      } else {
+        return categories.filter{!$0.isVenturaOnly}
+      }
+    }()
+    
+    var isVenturaOnly: Bool {
+      switch self {
+      case .CameraPhotos,
+          .Accessibility,
+          .PrivacySecurity,
+          .Home,
+          .Fitness:
+        return true
+      default:
+        return false
+      }
+    }
+    
+    var name: String {
+      return self.rawValue.localized
+    }
+    
+    var symbol: String {
+      switch self {
+      case .All:
+        return "square.grid.2x2"
+      case .Communication:
+        return "message"
+      case .Weather:
+        return "cloud.sun"
+      case .ObjectsTools:
+        return "folder"
+      case .Devices:
+        return "desktopcomputer"
+      case .CameraPhotos:
+        return "camera"
+      case .Gaming:
+        return "gamecontroller"
+      case .Connectivity:
+        return "antenna.radiowaves.left.and.right"
+      case .Transportation:
+        return "car.fill"
+      case .Accessibility:
+        return "figure.arms.open"
+      case .PrivacySecurity:
+        return "lock"
+      case .Human:
+        return "person.crop.circle"
+      case .Home:
+        return "house"
+      case .Fitness:
+        return "figure.run"
+      case .Nature:
+        return "leaf"
+      case .Editing:
+        return "slider.horizontal.3"
+      case .TextFormatting:
+        return "textformat"
+      case .Media:
+        return "playpause"
+      case .Keyboard:
+        return "command"
+      case .Commerce:
+        return "cart"
+      case .Time:
+        return "timer"
+      case .Health:
+        return "staroflife"
+      case .Shapes:
+        return "square.on.circle"
+      case .Arrows:
+        return "arrow.right"
+      case .Indices:
+        return "a.circle"
+      case .Math:
+        return "x.squareroot"
+      }
+    }
   }
-  
-  // localized key
-  static let name: [Category:String] = [
-    .All: "CategoryAll",
-    .Communication: "CategoryCommunication",
-    .Weather: "CategoryWeather",
-    .ObjectsTools: "CategoryObjectsTools",
-    .Devices: "CategoryDevices",
-    .Gaming: "CategoryGaming",
-    .Connectivity: "CategoryConnectivity",
-    .Transportation: "CategoryTransportation",
-    .Human: "CategoryHuman",
-    .Nature: "CategoryNature",
-    .Editing: "CategoryEditing",
-    .TextFormatting: "CategoryTextFormatting",
-    .Media: "CategoryMedia",
-    .Keyboard: "CategoryKeyboard",
-    .Commerce: "CategoryCommerce",
-    .Time: "CategoryTime",
-    .Health: "CategoryHealth",
-    .Shapes: "CategoryShapes",
-    .Arrows: "CategoryArrows",
-    .Indices: "CategoryIndices",
-    .Math: "CategoryMath",
-  ]
-  
-  static let categorySymbol: [Category:String] = [
-    .All: "square.grid.2x2",
-    .Communication: "message",
-    .Weather: "cloud.sun",
-    .ObjectsTools: "folder",
-    .Devices: "desktopcomputer",
-    .Gaming: "gamecontroller",
-    .Connectivity: "antenna.radiowaves.left.and.right",
-    .Transportation: "car.fill",
-    .Human: "person.crop.circle",
-    .Nature: "leaf",
-    .Editing: "slider.horizontal.3",
-    .TextFormatting: "textformat",
-    .Media: "playpause",
-    .Keyboard: "command",
-    .Commerce: "cart",
-    .Time: "timer",
-    .Health: "staroflife",
-    .Shapes: "square.on.circle",
-    .Arrows: "arrow.right",
-    .Indices: "a.circle",
-    .Math: "x.squareroot",
-  ]
   
   static func symbols(in category: Category) -> [String] {
     let prefix: String
     
-    if #available(macOS 12.0, *) {
+    if #available(macOS 13.0, *) {
+      prefix = "Ventura-"
+    } else if #available(macOS 12.0, *) {
       prefix = "Monterey-"
     } else {
       prefix = "BigSur-"

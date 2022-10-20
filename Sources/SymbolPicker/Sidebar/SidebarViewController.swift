@@ -53,9 +53,9 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
   }
   
   func configureDefaultSidebar() {
-    for category in Symbol.Category.allCases {
-      let name = Symbol.name[category]!
-      let symbolName = Symbol.categorySymbol[category]!
+    for category in Symbol.Category.all {
+      let name = category.name
+      let symbolName = category.symbol
       let node = Node(name.localized, symbolName: symbolName, category: category)
       content.append(node)
     }
