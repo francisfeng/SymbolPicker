@@ -88,7 +88,7 @@ person.crop.square.filled.and.at.rectangle
 person.crop.square.filled.and.at.rectangle.fill
 person.text.rectangle
 person.text.rectangle.fill
-person.crop.background.dotted
+person.and.background.dotted
 figure.stand
 figure.stand.line.dotted.figure.stand
 figure.dress.line.vertical.figure
