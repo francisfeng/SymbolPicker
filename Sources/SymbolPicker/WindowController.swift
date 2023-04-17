@@ -46,6 +46,8 @@ open class WindowController: NSWindowController {
     }
   }
   
+  @IBAction func performFindPanelAction(_ sender: Any) {
+    self.window?.makeFirstResponder(collectionViewController?.searchField)
   }
 }
 
