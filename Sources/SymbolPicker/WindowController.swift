@@ -22,11 +22,19 @@ open class WindowController: NSWindowController {
     configureDelegates()
   }
   
-  func configureCurrentItem(symbol: String, color: NSColor) {
+  public func configureCurrentItem(symbol: String, color: NSColor) {
     collectionViewController?.configureCurrentItem(symbol: symbol, color: color)
   }
   
-  func configureDelegates() {
+  public func toggleColorPanelButton(_ isHidden: Bool) {
+    collectionViewController?.toggleColorPanelButton(isHidden)
+  }
+  
+  public func updateWindowTitle(_ title: String) {
+    collectionViewController?.titleField.stringValue = title
+  }
+  
+  private func configureDelegates() {
     if let splitViewController = window?.contentViewController as? SplitViewController,
        let sidebar = splitViewController.splitViewItems.first?.viewController as? SidebarViewController,
        let collections = splitViewController.splitViewItems.last?.viewController as? SymbolCollectionViewController {
@@ -38,8 +46,6 @@ open class WindowController: NSWindowController {
     }
   }
   
-  func updateWindowTitle(_ title: String) {
-    collectionViewController?.titleField.stringValue = title
   }
 }
 

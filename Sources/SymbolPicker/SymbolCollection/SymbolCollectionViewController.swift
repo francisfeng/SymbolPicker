@@ -46,6 +46,10 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     setupLayout()
   }
   
+  public func toggleColorPanelButton(_ isHidden: Bool) {
+    colorPanelButton.isHidden = isHidden
+  }
+  
   override func viewDidDisappear() {
     super.viewDidDisappear()
     if NSColorPanel.shared.isVisible {

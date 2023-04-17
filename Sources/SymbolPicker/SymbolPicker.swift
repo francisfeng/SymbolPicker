@@ -10,10 +10,11 @@ import Cocoa
 open class SymbolPicker {
   var text = "Hello World"
   
-  public static func windowController(symbol: String, color: NSColor, delegate: SymbolPickerDelegate, title: String? = nil) -> NSWindowController? {
+  public static func windowController(symbol: String, color: NSColor, delegate: SymbolPickerDelegate, title: String? = nil, showColorPickerItem: Bool = true) -> NSWindowController? {
     let storyboard = NSStoryboard.init(name: "SymbolPicker", bundle: .module)
     if let controller = storyboard.instantiateController(withIdentifier: .init("main")) as? WindowController {
       controller.configureCurrentItem(symbol: symbol, color: color)
+      controller.toggleColorPanelButton(!showColorPickerItem)
       controller.delegate = delegate
       if let title = title {
         controller.updateWindowTitle(title)
