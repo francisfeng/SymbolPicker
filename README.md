@@ -47,7 +47,20 @@ extension ViewController: SymbolPickerDelegate {
 
 2. SwiftUI
 
-I haven't try it with SwiftUI yet. Any contributions will be welcome.
+Use the SwiftUI view like this:
+```swift
+SymbolPickerView(
+    showSymbolPicker: $showSymbolPicker, 
+    selectedSymbol: $selectedSymbol, 
+    selectedColor: $selectedColor, 
+    title: title
+)
+```
+Where 
+- `showSymbolPicker` is a `Bool` representing if the picker view is shown or not
+- `selectedSymbol` is a `String` representing the SF symbol's name
+- `selectedColor` is the `Color` of the object
+- `title` is the name shown in the title bar of the popup window
 
 ## Lisense
 MIT
