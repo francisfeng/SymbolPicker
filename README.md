@@ -47,20 +47,39 @@ extension ViewController: SymbolPickerDelegate {
 
 2. SwiftUI
 
-Use the SwiftUI view like this:
+The `SymbolPicker` is designed to show as a sheet window.
+
+In SwiftUI, you can present a sheet window with the `sheet` modifier of `Button` like this:
+
 ```swift
-SymbolPickerView(
-    showSymbolPicker: $showSymbolPicker, 
-    selectedSymbol: $selectedSymbol, 
-    selectedColor: $selectedColor, 
-    title: title
-)
+
+@State var showSymbolPicker = false
+@State var commandIcon = "tray"
+@State var selectedColor = Color.accentColor
+
+Button(action: {
+  showSymbolPicker = true
+}, label: {
+  Image(systemName: commandIcon)
+}).sheet(isPresented: $showSymbolPicker) {
+  SymbolPickerView(
+    showSymbolPicker: $showSymbolPicker,
+    selectedSymbol: $commandIcon,
+    selectedColor: $selectedColor,
+    title: "Command Icon",
+    showColorPickerItem: false
+  ).frame(minWidth: 550, maxWidth: 1920, minHeight: 320, maxHeight: 960)
+}
+
+// Keep `minWidth` and `minHeight` to `550` and `320` respectively
+// because how the SymbolPicker is designed.
 ```
 Where 
-- `showSymbolPicker` is a `Bool` representing if the picker view is shown or not
-- `selectedSymbol` is a `String` representing the SF symbol's name
-- `selectedColor` is the `Color` of the object
-- `title` is the name shown in the title bar of the popup window
+- `showSymbolPicker`: if we want to show the symbol picker.
+- `selectedSymbol`: the name of the SF Symbol.
+- `selectedColor`: the color the SF Symbol.
+- `title`: the title of the symbol picker sheet window.
+- `showColorPickerItem`: if we want to show the color picker toolbar item.
 
 ## Lisense
 MIT
