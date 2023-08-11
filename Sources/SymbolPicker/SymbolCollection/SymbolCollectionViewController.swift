@@ -41,6 +41,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
     collectionView.register(SymbolView.self, forItemWithIdentifier: .SymbolView)
     collectionView.allowsEmptySelection = false
     searchField.action = #selector(searchAction)
+    searchField.delegate = self
     colorPanelButton.action = #selector(showColorPancel)
     colorPanelButton.target = self
     setupLayout()
@@ -162,11 +163,14 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
       } else {
         pickerDelegate?.symbolPicker(symbol, color: nil)
       }
-      guard let window = view.window else { return }
-      window.sheetParent?.endSheet(window, returnCode: .OK)
+      endSheet()
     }
   }
   
+  func endSheet() {
+    guard let window = view.window else { return }
+    window.sheetParent?.endSheet(window, returnCode: .OK)
+  }
 }
 
 extension SymbolCollectionViewController: SidebarController {
@@ -199,5 +203,17 @@ extension SymbolCollectionViewController {
       symbolsName = originalSymbolsName.filter{$0.contains(string)}
     }
     collectionView.reloadData()
+  }
+}
+
+extension SymbolCollectionViewController: NSSearchFieldDelegate {
+  func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+    if commandSelector == #selector(cancelOperation) {
+      if searchField.stringValue.isEmpty {
+        endSheet()
+        return true
+      }
+    }
+    return false
   }
 }
