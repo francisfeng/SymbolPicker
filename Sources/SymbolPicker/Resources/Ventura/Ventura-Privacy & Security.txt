@@ -37,6 +37,8 @@ bubble.left.and.exclamationmark.bubble.right.fill
 envelope.badge.shield.half.filled
 envelope.badge.shield.half.filled.fill
 nosign
+nosign.app
+nosign.app.fill
 lock
 lock.fill
 lock.circle
@@ -64,9 +66,14 @@ lock.open.fill
 lock.open.trianglebadge.exclamationmark
 lock.open.trianglebadge.exclamationmark.fill
 lock.rotation
-lock.rotation.open
+lock.open.rotation
 key
 key.fill
+key.radiowaves.forward
+key.radiowaves.forward.fill
+key.horizontal
+key.horizontal.fill
+questionmark.key.filled
 faceid
 lock.display
 lock.open.display
@@ -98,6 +105,8 @@ hand.raised.circle
 hand.raised.circle.fill
 hand.raised.square
 hand.raised.square.fill
+hand.raised.app
+hand.raised.app.fill
 hand.raised.slash
 hand.raised.slash.fill
 key.viewfinder

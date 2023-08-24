@@ -33,6 +33,8 @@ person.2
 person.2.fill
 person.2.circle
 person.2.circle.fill
+person.2.slash
+person.2.slash.fill
 person.2.gobackward
 person.2.badge.gearshape
 person.2.badge.gearshape.fill
@@ -66,6 +68,7 @@ person.crop.circle.badge.clock
 person.crop.circle.badge.clock.fill
 person.crop.circle.badge
 person.crop.circle.badge.fill
+person.crop.circle.dashed
 person.crop.square
 person.crop.square.fill
 person.crop.artframe
@@ -113,6 +116,8 @@ figure.fall.circle.fill
 figure.run
 figure.run.circle
 figure.run.circle.fill
+figure.run.square.stack
+figure.run.square.stack.fill
 figure.roll
 figure.roll.runningpace
 figure.american.football
@@ -194,7 +199,7 @@ tshirt
 tshirt.fill
 shoeprints.fill
 face.smiling
-face.smiling.fill
+face.smiling.inverse
 face.dashed
 face.dashed.fill
 eye
@@ -235,6 +240,8 @@ hand.raised.circle
 hand.raised.circle.fill
 hand.raised.square
 hand.raised.square.fill
+hand.raised.app
+hand.raised.app.fill
 hand.raised.slash
 hand.raised.slash.fill
 hand.raised.fingers.spread

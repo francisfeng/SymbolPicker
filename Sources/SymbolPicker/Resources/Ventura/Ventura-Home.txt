@@ -22,6 +22,8 @@ fan.oscillation
 fan.oscillation.fill
 fanblades
 fanblades.fill
+fanblades.slash
+fanblades.slash.fill
 fan.desk
 fan.desk.fill
 fan.floor
@@ -281,6 +283,8 @@ sink
 sink.fill
 toilet
 toilet.fill
+toilet.circle
+toilet.circle.fill
 stairs
 square.split.bottomrightquarter
 square.split.bottomrightquarter.fill

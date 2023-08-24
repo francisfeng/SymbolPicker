@@ -140,6 +140,7 @@ wind.snow.circle.fill
 snowflake
 snowflake.circle
 snowflake.circle.fill
+snowflake.slash
 tornado
 tornado.circle
 tornado.circle.fill
@@ -193,6 +194,12 @@ bolt.badge.clock
 bolt.badge.clock.fill
 bolt.badge.a
 bolt.badge.a.fill
+bolt.trianglebadge.exclamationmark
+bolt.trianglebadge.exclamationmark.fill
+mountain.2
+mountain.2.fill
+mountain.2.circle
+mountain.2.circle.fill
 allergens
 allergens.fill
 microbe
@@ -215,6 +222,8 @@ ladybug
 ladybug.fill
 fish
 fish.fill
+fish.circle
+fish.circle.fill
 pawprint
 pawprint.fill
 pawprint.circle
@@ -229,6 +238,10 @@ laurel.trailing
 camera.macro
 camera.macro.circle
 camera.macro.circle.fill
+tree
+tree.fill
+tree.circle
+tree.circle.fill
 carrot
 carrot.fill
 atom

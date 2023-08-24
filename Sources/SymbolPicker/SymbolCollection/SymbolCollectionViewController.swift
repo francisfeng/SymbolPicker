@@ -141,7 +141,7 @@ class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSour
   }
   
   func configureSymbol(_ view: SymbolView, symbol: String) {
-    let configuration = NSImage.SymbolConfiguration(pointSize: 18, weight: .regular)
+    let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
     let image = NSImage(symbol)?.withSymbolConfiguration(configuration)
     view.imageViewForSymbol.image = image
     view.imageViewForSymbol.contentTintColor = color

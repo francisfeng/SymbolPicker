@@ -6,6 +6,8 @@ figure.walk.diamond.fill
 figure.run
 figure.run.circle
 figure.run.circle.fill
+figure.run.square.stack
+figure.run.square.stack.fill
 figure.roll
 figure.roll.runningpace
 figure.american.football
@@ -87,6 +89,19 @@ sportscourt
 sportscourt.fill
 sportscourt.circle
 sportscourt.circle.fill
+lane
+1.lane
+2.lane
+3.lane
+4.lane
+5.lane
+6.lane
+7.lane
+8.lane
+9.lane
+10.lane
+11.lane
+12.lane
 soccerball
 soccerball.inverse
 soccerball.circle
@@ -136,6 +151,8 @@ water.waves.and.arrow.up
 water.waves.and.arrow.down
 water.waves.and.arrow.down.trianglebadge.exclamationmark
 flag.checkered
+flag.checkered.circle
+flag.checkered.circle.fill
 flag.2.crossed
 flag.2.crossed.fill
 flag.2.crossed.circle

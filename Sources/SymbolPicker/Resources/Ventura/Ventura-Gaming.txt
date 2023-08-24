@@ -7,6 +7,8 @@ rectangle.on.rectangle.circle.fill
 rectangle.on.rectangle.square
 rectangle.on.rectangle.square.fill
 flag.checkered
+flag.checkered.circle
+flag.checkered.circle.fill
 flag.2.crossed
 flag.2.crossed.fill
 flag.2.crossed.circle

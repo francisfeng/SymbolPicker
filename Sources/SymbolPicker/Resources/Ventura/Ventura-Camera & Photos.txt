@@ -12,6 +12,8 @@ bolt.badge.clock
 bolt.badge.clock.fill
 bolt.badge.a
 bolt.badge.a.fill
+bolt.trianglebadge.exclamationmark
+bolt.trianglebadge.exclamationmark.fill
 camera
 camera.fill
 camera.circle
@@ -59,6 +61,8 @@ livephoto.slash
 livephoto.badge.a
 livephoto.play
 scope
+rectangle.and.arrow.up.right.and.arrow.down.left
+rectangle.and.arrow.up.right.and.arrow.down.left.slash
 square.2.layers.3d
 square.2.layers.3d.top.filled
 square.2.layers.3d.bottom.filled

@@ -6,6 +6,8 @@ play.square
 play.square.fill
 play.rectangle
 play.rectangle.fill
+play.square.stack
+play.square.stack.fill
 play.slash
 play.slash.fill
 pause

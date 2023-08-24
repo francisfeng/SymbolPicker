@@ -116,6 +116,7 @@ wind.snow.circle.fill
 snowflake
 snowflake.circle
 snowflake.circle.fill
+snowflake.slash
 tornado
 tornado.circle
 tornado.circle.fill
