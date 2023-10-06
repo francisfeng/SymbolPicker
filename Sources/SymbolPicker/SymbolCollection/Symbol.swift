@@ -12,12 +12,14 @@ class Symbol {
     case All = "All"
     case Communication = "Communication"
     case Weather = "Weather"
+    case Maps = "Maps"
     case ObjectsTools = "Objects & Tools"
     case Devices = "Devices"
     case CameraPhotos = "Camera & Photos"
     case Gaming = "Gaming"
     case Connectivity = "Connectivity"
     case Transportation = "Transportation"
+    case Automotive = "Automotive"
     case Accessibility = "Accessibility"
     case PrivacySecurity = "Privacy & Security"
     case Human = "Human"
@@ -38,24 +40,36 @@ class Symbol {
     
     static let all: [Category] = {
       var categories = Category.allCases
-     
-      if #available(macOS 13.0, *) {
-       return categories
+      
+      if #available(macOS 14.0, *) {
+        return categories
+      } else if #available(macOS 13.0, *) {
+        return categories.filter{!$0.isSonomaOnly}
       } else {
-        return categories.filter{!$0.isVenturaOnly}
+        return categories.filter{!$0.isSonomaOnly && !$0.isVenturaOnly}
       }
     }()
     
+    var isSonomaOnly: Bool {
+      switch self {
+        case .Maps,
+            .Automotive:
+          return true
+        default:
+          return false
+      }
+    }
+    
     var isVenturaOnly: Bool {
       switch self {
-      case .CameraPhotos,
-          .Accessibility,
-          .PrivacySecurity,
-          .Home,
-          .Fitness:
-        return true
-      default:
-        return false
+        case .CameraPhotos,
+            .Accessibility,
+            .PrivacySecurity,
+            .Home,
+            .Fitness:
+          return true
+        default:
+          return false
       }
     }
     
@@ -65,58 +79,62 @@ class Symbol {
     
     var symbol: String {
       switch self {
-      case .All:
-        return "square.grid.2x2"
-      case .Communication:
-        return "message"
-      case .Weather:
-        return "cloud.sun"
-      case .ObjectsTools:
-        return "folder"
-      case .Devices:
-        return "desktopcomputer"
-      case .CameraPhotos:
-        return "camera"
-      case .Gaming:
-        return "gamecontroller"
-      case .Connectivity:
-        return "antenna.radiowaves.left.and.right"
-      case .Transportation:
-        return "car.fill"
-      case .Accessibility:
-        return "figure.arms.open"
-      case .PrivacySecurity:
-        return "lock"
-      case .Human:
-        return "person.crop.circle"
-      case .Home:
-        return "house"
-      case .Fitness:
-        return "figure.run"
-      case .Nature:
-        return "leaf"
-      case .Editing:
-        return "slider.horizontal.3"
-      case .TextFormatting:
-        return "textformat"
-      case .Media:
-        return "playpause"
-      case .Keyboard:
-        return "command"
-      case .Commerce:
-        return "cart"
-      case .Time:
-        return "timer"
-      case .Health:
-        return "staroflife"
-      case .Shapes:
-        return "square.on.circle"
-      case .Arrows:
-        return "arrow.right"
-      case .Indices:
-        return "a.circle"
-      case .Math:
-        return "x.squareroot"
+        case .All:
+          return "square.grid.2x2"
+        case .Communication:
+          return "message"
+        case .Weather:
+          return "cloud.sun"
+        case .Maps:
+          return "map"
+        case .ObjectsTools:
+          return "folder"
+        case .Devices:
+          return "desktopcomputer"
+        case .CameraPhotos:
+          return "camera"
+        case .Gaming:
+          return "gamecontroller"
+        case .Connectivity:
+          return "antenna.radiowaves.left.and.right"
+        case .Transportation:
+          return "car.fill"
+        case .Automotive:
+          return "steeringwheel"
+        case .Accessibility:
+          return "figure.arms.open"
+        case .PrivacySecurity:
+          return "lock"
+        case .Human:
+          return "person.crop.circle"
+        case .Home:
+          return "house"
+        case .Fitness:
+          return "figure.run"
+        case .Nature:
+          return "leaf"
+        case .Editing:
+          return "slider.horizontal.3"
+        case .TextFormatting:
+          return "textformat"
+        case .Media:
+          return "playpause"
+        case .Keyboard:
+          return "command"
+        case .Commerce:
+          return "cart"
+        case .Time:
+          return "timer"
+        case .Health:
+          return "staroflife"
+        case .Shapes:
+          return "square.on.circle"
+        case .Arrows:
+          return "arrow.right"
+        case .Indices:
+          return "a.circle"
+        case .Math:
+          return "x.squareroot"
       }
     }
   }
@@ -124,7 +142,9 @@ class Symbol {
   static func symbols(in category: Category) -> [String] {
     let prefix: String
     
-    if #available(macOS 13.0, *) {
+    if #available(macOS 14.0, *) {
+      prefix = "Sonoma-"
+    } else if #available(macOS 13.0, *) {
       prefix = "Ventura-"
     } else if #available(macOS 12.0, *) {
       prefix = "Monterey-"

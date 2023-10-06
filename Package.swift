@@ -28,7 +28,8 @@ let package = Package(
       resources: [
         .process("Resources/Big Sur"),
         .process("Resources/Monterey"),
-        .process("Resources/Ventura")
+        .process("Resources/Ventura"),
+        .process("Resources/Sonoma"),
       ]),
     .testTarget(
       name: "SymbolPickerTests",

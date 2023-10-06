@@ -11,12 +11,14 @@
 "All" = "全部";
 "Communication" = "通信";
 "Weather" = "天气";
+"Maps" = "地图";
 "Objects & Tools" = "物体与工具";
 "Devices" = "设备";
 "Camera & Photos" = "相机与照片";
 "Gaming" = "游戏";
 "Connectivity" = "连接状态";
 "Transportation" = "交通";
+"Automotive" = "汽车";
 "Accessibility" = "辅助功能";
 "Privacy & Security" = "隐私与安全";
 "Human" = "人";
