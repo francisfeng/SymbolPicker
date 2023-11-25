@@ -146,10 +146,8 @@ class Symbol {
       prefix = "Sonoma-"
     } else if #available(macOS 13.0, *) {
       prefix = "Ventura-"
-    } else if #available(macOS 12.0, *) {
-      prefix = "Monterey-"
     } else {
-      prefix = "BigSur-"
+      prefix = "Monterey-"
     }
     
     if let url = Bundle.module.url(forResource: prefix + category.rawValue, withExtension: "txt") {
