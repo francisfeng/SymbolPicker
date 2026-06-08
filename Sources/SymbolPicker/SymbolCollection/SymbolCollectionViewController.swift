@@ -13,7 +13,7 @@ public protocol SymbolPickerDelegate: AnyObject {
 
 class SymbolCollectionViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
   
-  @IBOutlet weak var collectionView: CollectionView!
+  @IBOutlet weak var collectionView: NSCollectionView!
   
   var originalSymbolsName: [String] = []
   var symbolsName: [String] = []

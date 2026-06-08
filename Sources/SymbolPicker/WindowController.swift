@@ -21,7 +21,20 @@ open class WindowController: NSWindowController {
     window?.isReleasedWhenClosed = true
     configureDelegates()
   }
-  
+
+  open override func doCommand(by selector: Selector) {
+    if selector == NSSelectorFromString("cancel:") {
+      self.cancelOperation(self)
+    }
+    else {
+      super.doCommand(by: selector)
+    }
+  }
+
+  open override func cancelOperation(_ sender: Any?) {
+    self.window?.sheetParent?.endSheet(self.window!, returnCode: .abort)
+  }
+
   public func configureCurrentItem(symbol: String, color: NSColor) {
     collectionViewController?.configureCurrentItem(symbol: symbol, color: color)
   }
