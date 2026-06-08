@@ -12,7 +12,7 @@
         <scene sceneID="3ID-S4-t5z">
             <objects>
                 <windowController storyboardIdentifier="main" showSeguePresentationStyle="single" id="00e-Iv-nRI" customClass="WindowController" customModule="SymbolPicker" sceneMemberID="viewController">
-                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="SymbolPicker" animationBehavior="default" tabbingIdentifier="SymbolPickerWindow" toolbarStyle="compact" id="LDa-mo-e1J" customClass="Window" customModule="SymbolPicker">
+                    <window key="window" title="SF Symbols" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="SymbolPicker" animationBehavior="default" tabbingIdentifier="SymbolPickerWindow" toolbarStyle="compact" id="LDa-mo-e1J">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="294" y="324" width="550" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
@@ -488,7 +488,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" id="xe5-QO-pjJ" customClass="CollectionView" customModule="SymbolPicker">
+                                        <collectionView selectable="YES" id="xe5-QO-pjJ">
                                             <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="ank-10-l1u">
