@@ -143,11 +143,11 @@ class Symbol {
     let prefix: String
     
     if #available(macOS 14.0, *) {
-      prefix = "Sonoma-"
+      prefix = "macOS14-"
     } else if #available(macOS 13.0, *) {
-      prefix = "Ventura-"
+      prefix = "macOS13-"
     } else {
-      prefix = "Monterey-"
+      prefix = "macOS12-"
     }
     
     if let url = Bundle.module.url(forResource: prefix + category.rawValue, withExtension: "txt") {

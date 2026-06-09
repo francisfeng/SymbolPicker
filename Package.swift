@@ -26,9 +26,9 @@ let package = Package(
       name: "SymbolPicker",
       dependencies: [],
       resources: [
-        .process("Resources/Monterey"),
-        .process("Resources/Ventura"),
-        .process("Resources/Sonoma"),
+        .process("Resources/macOS12"),
+        .process("Resources/macOS13"),
+        .process("Resources/macOS14"),
       ]),
     .testTarget(
       name: "SymbolPickerTests",
