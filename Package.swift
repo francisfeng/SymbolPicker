@@ -21,6 +21,8 @@ let package = Package(
     .target(
       name: "SymbolPicker",
       resources: [
+        .process("Resources/Localizable.xcstrings"),
+        .process("Resources/SymbolPicker.storyboard"),
         .process("Resources/macOS13"),
         .process("Resources/macOS14"),
         .process("Resources/macOS15"),

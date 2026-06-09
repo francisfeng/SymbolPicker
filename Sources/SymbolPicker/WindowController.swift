@@ -17,7 +17,7 @@ open class WindowController: NSWindowController {
   
   open override func windowDidLoad() {
     super.windowDidLoad()
-    updateWindowTitle(String(localized: "SF Symbols"))
+    updateWindowTitle(String(localized: "SF Symbols", bundle: .module))
     window?.isReleasedWhenClosed = true
     configureDelegates()
   }
