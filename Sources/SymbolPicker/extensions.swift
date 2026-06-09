@@ -7,12 +7,6 @@
 
 import Cocoa
 
-extension String {
-  var localized: String {
-    return NSLocalizedString(self, tableName: nil, bundle: .module, value: "", comment: "")
-  }
-}
-
 extension NSImage {
   convenience init?(_ name: String) {
     self.init(systemSymbolName: name, accessibilityDescription: nil)

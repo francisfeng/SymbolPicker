@@ -11,7 +11,7 @@ import AppKit
   
   @objc var identifier: String = ""
   @objc let symbolName: String
-  @objc let value: String
+  @objc let title: String
   let category: Symbol.Category
   
   @objc dynamic var children = [Node]()
@@ -20,9 +20,9 @@ import AppKit
     return children.count
   }
   
-  init(_ value: String, symbolName: String, category: Symbol.Category) {
-    self.value = value
-    self.symbolName = symbolName
+  init(category: Symbol.Category) {
+    self.title = category.title
+    self.symbolName = category.symbol
     self.category = category
   }
   

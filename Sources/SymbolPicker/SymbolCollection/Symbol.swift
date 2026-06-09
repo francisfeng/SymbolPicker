@@ -73,8 +73,65 @@ class Symbol {
       }
     }
     
-    var name: String {
-      return self.rawValue.localized
+    var title: String {
+      switch self {
+        case .All:
+          return String(localized: "All", bundle: .module)
+        case .Communication:
+          return String(localized: "Communication", bundle: .module)
+        case .Weather:
+          return String(localized: "Weather", bundle: .module)
+        case .Maps:
+          return String(localized: "Maps", bundle: .module)
+        case .ObjectsTools:
+          return String(localized: "Objects & Tools", bundle: .module)
+        case .Devices:
+          return String(localized: "Devices", bundle: .module)
+        case .CameraPhotos:
+          return String(localized: "Camera & Photos", bundle: .module)
+        case .Gaming:
+          return String(localized: "Gaming", bundle: .module)
+        case .Connectivity:
+          return String(localized: "Connectivity", bundle: .module)
+        case .Transportation:
+          return String(localized: "Transportation", bundle: .module)
+        case .Automotive:
+          return String(localized: "Automotive", bundle: .module)
+        case .Accessibility:
+          return String(localized: "Accessibility", bundle: .module)
+        case .PrivacySecurity:
+          return String(localized: "Privacy & Security", bundle: .module)
+        case .Human:
+          return String(localized: "Human", bundle: .module)
+        case .Home:
+          return String(localized: "Home", bundle: .module)
+        case .Fitness:
+          return String(localized: "Fitness", bundle: .module)
+        case .Nature:
+          return String(localized: "Nature", bundle: .module)
+        case .Editing:
+          return String(localized: "Editing", bundle: .module)
+        case .TextFormatting:
+          return String(localized: "Text Formatting", bundle: .module)
+        case .Media:
+          return String(localized: "Media", bundle: .module)
+        case .Keyboard:
+          return String(localized: "Keyboard", bundle: .module)
+        case .Commerce:
+          return String(localized: "Commerce", bundle: .module)
+        case .Time:
+          return String(localized: "Time", bundle: .module)
+        case .Health:
+          return String(localized: "Health", bundle: .module)
+        case .Shapes:
+          return String(localized: "Shapes", bundle: .module)
+        case .Arrows:
+          return String(localized: "Arrows", bundle: .module)
+        case .Indices:
+          return String(localized: "Indices", bundle: .module)
+        case .Math:
+          return String(localized: "Math", bundle: .module)
+      }
     }
     
     var symbol: String {
