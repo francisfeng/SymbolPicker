@@ -142,7 +142,9 @@ class Symbol {
   static func symbols(in category: Category) -> [String] {
     let prefix: String
     
-    if #available(macOS 15.0, *) {
+    if #available(macOS 26.0, *) {
+      prefix = "macOS26-"
+    } else if #available(macOS 15.0, *) {
       prefix = "macOS15-"
     } else if #available(macOS 14.0, *) {
       prefix = "macOS14-"
