@@ -29,6 +29,7 @@ let package = Package(
         .process("Resources/macOS12"),
         .process("Resources/macOS13"),
         .process("Resources/macOS14"),
+        .process("Resources/macOS15"),
       ]),
     .testTarget(
       name: "SymbolPickerTests",

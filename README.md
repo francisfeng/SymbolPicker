@@ -4,7 +4,7 @@ A SF Symbols picker for Mac apps. Built with AppKit.
 
 ## Compatibility
 
-- macOS 11.0+
+- macOS 12.0+
 
 ## Install
 

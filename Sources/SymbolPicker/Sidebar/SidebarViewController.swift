@@ -82,6 +82,7 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
                              withKeyPath: "objectValue.value",
                              options: nil)
         view.imageView?.image = NSImage(node.symbolName)
+        view.imageView?.contentTintColor = .controlAccentColor
         return view
       }
     }
