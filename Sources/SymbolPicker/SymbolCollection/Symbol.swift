@@ -43,10 +43,8 @@ class Symbol {
       
       if #available(macOS 14.0, *) {
         return categories
-      } else if #available(macOS 13.0, *) {
-        return categories.filter{!$0.isSonomaOnly}
       } else {
-        return categories.filter{!$0.isSonomaOnly && !$0.isVenturaOnly}
+        return categories.filter{!$0.isSonomaOnly}
       }
     }()
     
@@ -54,19 +52,6 @@ class Symbol {
       switch self {
         case .Maps,
             .Automotive:
-          return true
-        default:
-          return false
-      }
-    }
-    
-    var isVenturaOnly: Bool {
-      switch self {
-        case .CameraPhotos,
-            .Accessibility,
-            .PrivacySecurity,
-            .Home,
-            .Fitness:
           return true
         default:
           return false
