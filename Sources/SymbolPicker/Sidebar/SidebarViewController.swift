@@ -32,8 +32,8 @@ class SidebarViewController: NSViewController, NSOutlineViewDelegate {
   
   func configureOutlineView() {
     outlineView.enclosingScrollView?.scrollerStyle = .overlay
-    DispatchQueue.main.async {
-      self.selectAllSidebarItem()
+    DispatchQueue.main.async { [weak self] in
+      self?.selectAllSidebarItem()
     }
   }
   

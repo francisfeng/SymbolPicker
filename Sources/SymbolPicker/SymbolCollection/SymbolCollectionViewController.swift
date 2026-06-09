@@ -191,6 +191,8 @@ extension SymbolCollectionViewController: SidebarController {
       currentSelected = set
       
       collectionView.selectItems(at: set, scrollPosition: .centeredVertically)
+    } else {
+      collectionView.scroll(.zero)
     }
   }
 }

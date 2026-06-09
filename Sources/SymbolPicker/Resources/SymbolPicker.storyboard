@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22503" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22503"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24765"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,13 +283,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-SG-Qls">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="364"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="362"/>
                                 <clipView key="contentView" drawsBackground="NO" id="R9N-WL-XEF">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="364"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="362"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="Bfc-pj-JmR" id="U29-ib-PnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="364"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="362"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -427,7 +427,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-Zm-INp">
-                                                    <rect key="frame" x="6" y="11" width="194" height="17"/>
+                                                    <rect key="frame" x="6" y="11" width="174" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Anybox - The Bookmark Manager" usesSingleLineMode="YES" id="YHa-va-kHX">
                                                         <font key="font" metaFont="systemSemibold" size="14"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -435,7 +435,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-lg-XUG">
-                                                    <rect key="frame" x="242" y="9" width="200" height="22"/>
+                                                    <rect key="frame" x="242" y="8" width="200" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="UPY-Xv-OSJ"/>
                                                     </constraints>
@@ -446,7 +446,7 @@
                                                     </searchFieldCell>
                                                 </searchField>
                                                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-de-YRm">
-                                                    <rect key="frame" x="206" y="10" width="28" height="19"/>
+                                                    <rect key="frame" x="186" y="8" width="48" height="24"/>
                                                     <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="NSColorPanel" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9an-lf-cyY">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="systemBold" size="12"/>
